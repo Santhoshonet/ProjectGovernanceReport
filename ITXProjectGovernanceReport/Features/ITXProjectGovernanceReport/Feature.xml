@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/"
+         Id="{BEBB5817-9563-4798-A60E-F5EB8A6CDB14}"
+         Title="ITX Project Governance Report"
+         Description="This feature will helps to synchronize the project details into group configuration list."
+         Scope="Site"
+         Hidden="false"
+         Version="1.0.0.0"
+         ReceiverAssembly="ITXPGReportUtilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=488363079fbfb28c"
+         ReceiverClass="ITXPGReportUtilities.FeatureEventReceiver"
+         >
+</Feature>

@@ -1,0 +1,225 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer>
+      <setting name="UsedSolutionBuilderID">0</setting>
+    </integer>
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Installer.cs" caret="7342" scrollPosition="0|0" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Program.cs" caret="346" scrollPosition="0|0" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyUtilities.cs" caret="305" scrollPosition="0|0" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="1890" scrollPosition="0|0" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Installer.cs" caret="6696" scrollPosition="0|103" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Installer.cs" caret="7005" scrollPosition="0|109" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Installer.cs" caret="664" scrollPosition="0|0" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Installer.cs" caret="664" scrollPosition="0|0" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Installer.cs" caret="1356" scrollPosition="0|0" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Installer.cs" caret="1814" scrollPosition="0|8" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="2408" scrollPosition="26|8" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="4766" scrollPosition="0|15" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|65" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|53" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|51" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|31" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|69" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|69" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|69" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|114" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|39" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="437" scrollPosition="0|9" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|9" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Program.cs" caret="346" scrollPosition="0|0" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="226" scrollPosition="0|0" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="560" scrollPosition="0|0" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="4740" scrollPosition="0|20" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyUtilities.cs" caret="305" scrollPosition="0|0" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="1154" scrollPosition="10|12" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="1688" scrollPosition="0|25" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="1912" scrollPosition="0|25" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="2268" scrollPosition="0|25" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <CustomStartDirectory>
+    </CustomStartDirectory>
+    <UseShadowCopy>True</UseShadowCopy>
+    <UseCustomFolder>False</UseCustomFolder>
+    <EnableUnitTesting>True</EnableUnitTesting>
+    <Providers />
+  </UnitTestRunner>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="static" priority="4" />
+      <Item value="return" priority="2" />
+      <Item value="false" priority="3" />
+      <Item value="string" priority="8" />
+      <Item value="MyConfiguration" priority="23" />
+      <Item value="Licensing" priority="0" />
+      <Item value="if" priority="9" />
+      <Item value="else" priority="4" />
+      <Item value="bool" priority="1" />
+      <Item value="DestinationPath" priority="2" />
+      <Item value="SourcePath" priority="3" />
+      <Item value="DirectoryPath" priority="0" />
+      <Item value="OverWriteFiles" priority="1" />
+      <Item value="private" priority="0" />
+      <Item value="void" priority="1" />
+      <Item value="SPSite" priority="1" />
+      <Item value="SPWeb" priority="1" />
+      <Item value="Site" priority="3" />
+      <Item value="item" priority="0" />
+      <Item value="Web" priority="10" />
+      <Item value="CmbWeb" priority="0" />
+      <Item value="Guid" priority="0" />
+      <Item value="public" priority="6" />
+      <Item value="true" priority="5" />
+      <Item value="this" priority="1" />
+      <Item value="TxtUrl" priority="0" />
+      <Item value="Application" priority="7" />
+      <Item value="args" priority="3" />
+      <Item value="LblStatus" priority="6" />
+      <Item value="Length" priority="0" />
+      <Item value="LicensingITXDM" priority="0" />
+      <Item value="MessageBox" priority="0" />
+      <Item value="Label" priority="1" />
+      <Item value="Utilities" priority="5" />
+      <Item value="MyUtilities" priority="11" />
+      <Item value="null" priority="2" />
+      <Item value="enum" priority="0" />
+      <Item value="DeploymentLevel" priority="0" />
+      <Item value="int" priority="0" />
+      <Item value="Uri" priority="1" />
+      <Item value="new" priority="0" />
+      <Item value="uri" priority="0" />
+      <Item value="ListViewAlignment" priority="1" />
+      <Item value="Deployment" priority="12" />
+      <Item value="VirtualDirectories" priority="0" />
+      <Item value="virtualDirectories" priority="4" />
+      <Item value="in" priority="0" />
+      <Item value="Port" priority="1" />
+      <Item value="WebConfigFilePath" priority="2" />
+      <Item value="WebPartInstallerPath" priority="3" />
+      <Item value="QuickLaunchPosition" priority="1" />
+      <Item value="TopLinkMenuPosition" priority="0" />
+      <Item value="ProcessWindowStyle" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Installer.MyConfiguration">
+      <Item value="Application_Title" priority="9" />
+      <Item value="SkipLicensing" priority="1" />
+      <Item value="WorkspaceInstallation" priority="0" />
+      <Item value="IsDemoOn" priority="1" />
+      <Item value="DefaultSiteUrl" priority="0" />
+      <Item value="DeploymentLevel" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Telerik.WinControls.UI.RadComboBoxItem">
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.SharePoint.SPWeb">
+      <Item value="ID" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Guid">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.SharePoint.SPSite">
+      <Item value="AllWebs" priority="0" />
+      <Item value="OpenWeb" priority="0" />
+      <Item value="Url" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Telerik.WinControls.UI.RadComboBox">
+      <Item value="SelectedItem" priority="0" />
+      <Item value="SelectedValue" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Installer.Installer">
+      <Item value="Text" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TextBox">
+      <Item value="Text" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@ITXProjectsLibrary.Deployment">
+      <Item value="RestartIIS" priority="0" />
+      <Item value="GetVirtualDirectories" priority="0" />
+      <Item value="CopyFilesAndFolders" priority="1" />
+      <Item value="ExecuteProcess" priority="1" />
+      <Item value="CreateDocumentLibrary" priority="0" />
+      <Item value="CreateGenericList" priority="0" />
+      <Item value="InsertWebPart" priority="0" />
+      <Item value="CreateWebPartPage" priority="0" />
+      <Item value="CreateQuickLaunchMenuHeading" priority="0" />
+      <Item value="CreateQuickLaunchMenuLink" priority="0" />
+      <Item value="CreatTopLinkBarHeading" priority="0" />
+      <Item value="CreatTopLinkBarSubMenu" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.Application">
+      <Item value="StartupPath" priority="4" />
+      <Item value="DoEvents" priority="0" />
+      <Item value="Exit" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="IsNullOrEmpty" priority="0" />
+      <Item value="Empty" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Installer.LicensingITXDM">
+      <Item value="Text" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Label">
+      <Item value="Text" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="ToLower" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.MessageBox">
+      <Item value="Show" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Installer.MyUtilities">
+      <Item value="UpdateStatus" priority="0" />
+      <Item value="DeploymentLevel" priority="1" />
+      <Item value="LayoutsFolderPath" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Installer.MyUtilities+DeploymentLevel">
+      <Item value="Site" priority="1" />
+      <Item value="Workspace" priority="0" />
+      <Item value="None" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Uri">
+      <Item value="Port" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ITXProjectsLibrary.VirtualDirectories">
+      <Item value="Port" priority="1" />
+      <Item value="Path" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@ITXProjectsLibrary.Utilities">
+      <Item value="UpdateWebConfigForAjax" priority="0" />
+      <Item value="UpdateWebConfigForTelerikDefaults" priority="0" />
+      <Item value="AddEntryIntoWebConfig" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.SharePoint.Administration.SPWebConfigModification+SPWebConfigModificationType">
+      <Item value="EnsureChildNode" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Diagnostics.ProcessWindowStyle">
+      <Item value="Hidden" priority="0" />
+      <Item value="Normal" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@ITXProjectsLibrary.QuickLaunchPosition">
+      <Item value="AddAtFist" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@ITXProjectsLibrary.TopLinkMenuPosition">
+      <Item value="AddAtFist" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.SharePoint.Utilities.SPUtility">
+      <Item value="GetGenericSetupPath" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

@@ -1,0 +1,5 @@
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXPGReportUtilities\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXPGReportUtilities\bin\Debug\ITXPGReportUtilities.dll
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXPGReportUtilities\bin\Debug\ITXPGReportUtilities.pdb
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXPGReportUtilities\obj\Debug\ITXPGReportUtilities.dll
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXPGReportUtilities\obj\Debug\ITXPGReportUtilities.pdb

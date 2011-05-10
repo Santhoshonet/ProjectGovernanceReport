@@ -1,0 +1,239 @@
+/*
+jQuery.ganttView v.0.8.0
+Copyright (c) 2010 JC Grubbs - jc.grubbs@devmynd.com
+MIT License Applies
+*/
+
+div.ganttview-hzheader-month, div.ganttview-hzheader-day, div.ganttview-vtheader, div.ganttview-vtheader-item-name, div.ganttview-vtheader-series, div.ganttview-grid, div.ganttview-grid-row-cell
+{
+	float: left;
+}
+
+div.ganttview-hzheader-month, div.ganttview-hzheader-day
+{
+	text-align: center;
+}
+
+div.ganttview-grid-row-cell.last, div.ganttview-hzheader-day.last, div.ganttview-hzheader-month.last
+{
+	border-right: none;
+}
+
+div.ganttview
+{
+	border: 1px solid #999;
+}
+
+/* Horizontal Header */
+
+div.ganttview-hzheader-month
+{
+	width: 60px;
+	height: 20px;
+	border-right: 1px solid #d0d0d0;
+	line-height: 20px;
+}
+
+div.ganttview-hzheader-day
+{
+	width: 30px;
+	height: 20px;
+	border-right: 1px solid #f0f0f0;
+	border-top: 1px solid #d0d0d0;
+	line-height: 20px;
+	color: #777;
+}
+
+/* Vertical Header */
+
+div.ganttview-vtheader
+{
+	margin-top: 13px;
+	width: 440px;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+div.ganttview-vtheader-item
+{
+	overflow: hidden;
+	color: #666;
+}
+
+div.ganttview-vtheader-item-name
+{
+	width: 30px;
+	padding-left: 25px;
+	border-top: 1px solid #d0d0d0;
+	line-height: 16px;
+	font-weight: bold;
+}
+
+div.ganttview-vtheader .project-details-header
+{
+	padding-left: 5px;
+	margin-bottom: 13px;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #666;
+}
+
+div.ganttview-vtheader-item-name-group
+{
+	height: 31px;
+	width: 525px;
+	padding-left: 5px;
+	border-top: 1px solid #d0d0d0;
+	line-height: 16px;
+	font-weight: bold;
+}
+
+/* header */
+
+div.ganttview-vtheader-item-name img, div.ganttview-vtheader-item-name-group img
+{
+	float: left;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+
+div.ganttview-vtheader-item-name p
+{
+	margin-left: 21px;
+	display: none;
+}
+
+div.ganttview-vtheader-series-name
+{
+	width: 380px;
+	height: 31px;
+	border-top: 1px solid #d0d0d0;
+	line-height: 16px;
+	padding-left: 5px;
+}
+
+/* Slider */
+
+div.ganttview-slide-container
+{
+	overflow: auto;
+	border-left: 1px solid #999;
+	position: absolute;
+	height: 448px;
+}
+
+/* Grid */
+
+div.ganttview-grid-row-cell
+{
+	width: 30px;
+	height: 31px;
+	border-right: 1px solid #f0f0f0;
+	border-top: 1px solid #f0f0f0;
+}
+
+.ganttview-grid
+{
+	position: absolute;
+}
+
+div.ganttview-grid-row-cell.ganttview-weekend
+{
+	background-color: #fafafa;
+}
+
+/* Grid Cells */
+div.ganttview-grid-row-cell
+{
+	width: 30px;
+	height: 31px;
+	border-right: 1px solid #f0f0f0;
+	border-top: 1px solid #f0f0f0;
+}
+
+/* Blocks */
+
+div.ganttview-blocks
+{
+	/*	margin-top: 40px; */
+}
+
+div.ganttview-block-container
+{
+	height: 28px;
+	padding-top: 4px;
+}
+
+div.ganttview-block
+{
+	position: absolute;
+	height: 25px;
+	background-color: #E5ECF9;
+	border: 1px solid #c0c0c0;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+/*Todo: Pick a colour for the hover option and change the hover icon to a link icon */
+div.ganttview-block:hover
+{
+	background: #444444;
+}
+
+div.ganttview-block-text
+{
+	position: absolute;
+	margin-top: 3px;
+	height: 12px;
+	font-size: 1.0em;
+	color: #999;
+	padding: 2px 3px;
+}
+
+/* Adjustments for jQuery UI Styling */
+
+div.ganttview-block div.ui-resizable-handle.ui-resizable-s
+{
+	bottom: -0;
+}
+
+.ganttChart
+{
+	margin-left: 20px;
+}
+#ganttChart
+{
+	border-left: solid 1px #999;
+	border-right: solid 1px #999;
+	border-bottom: solid 1px #999;
+}
+
+.ganttChart-container
+{
+	border-top: 1px solid #f0f0f0;
+	border-left: 1px solid #f0f0f0;
+	border-right: 1px solid #f0f0f0;
+}
+.ganttChart-container p
+{
+	font-weight: bold;
+	margin: 15px;
+}
+.ganttChart-container-image
+{
+	float: left;
+	margin: 5px;
+	margin-top: 15px;
+	margin-left: 2px;
+}
+
+.jsondata
+{
+	display: none;
+}
+
+div.ganttview-grid-row-cell.ganttview-weekend
+{
+	background-color: #fafafa;
+}

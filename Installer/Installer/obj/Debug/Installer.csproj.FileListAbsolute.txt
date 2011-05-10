@@ -1,0 +1,18 @@
+C:\Documents and Settings\Administrator\Desktop\Template Installer Tool Kit\Installer\Installer\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\Template Installer Tool Kit\Installer\Installer\obj\Debug\Installer.Installer.resources
+C:\Documents and Settings\Administrator\Desktop\Template Installer Tool Kit\Installer\Installer\obj\Debug\Installer.Licensing.resources
+C:\Documents and Settings\Administrator\Desktop\Template Installer Tool Kit\Installer\Installer\obj\Debug\Installer.LicensingITXDM.resources
+C:\Documents and Settings\Administrator\Desktop\Template Installer Tool Kit\Installer\Installer\obj\Debug\Installer.Properties.Resources.resources
+C:\Documents and Settings\Administrator\Desktop\Template Installer Tool Kit\Installer\Installer\obj\Debug\Installer.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\Desktop\Template Installer Tool Kit\Installer\Installer\bin\Debug\Installer.exe
+C:\Documents and Settings\Administrator\Desktop\Template Installer Tool Kit\Installer\Installer\bin\Debug\Installer.pdb
+C:\Documents and Settings\Administrator\Desktop\Template Installer Tool Kit\Installer\Installer\obj\Debug\Installer.exe
+C:\Documents and Settings\Administrator\Desktop\Template Installer Tool Kit\Installer\Installer\obj\Debug\Installer.pdb
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\Installer\Installer\obj\Debug\Installer.exe
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\Installer\Installer\obj\Debug\Installer.pdb
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\Installer\Installer\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\Installer\Installer\obj\Debug\Installer.Installer.resources
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\Installer\Installer\obj\Debug\Installer.Properties.Resources.resources
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\Installer\Installer\obj\Debug\Installer.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\Installer\Installer\bin\Debug\Installer.exe
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\Installer\Installer\bin\Debug\Installer.pdb

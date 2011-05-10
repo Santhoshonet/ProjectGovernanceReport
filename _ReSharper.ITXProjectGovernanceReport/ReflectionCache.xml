@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Assemblies Version="1073741836">
+  <Assembly Name="System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Image="8f99c35c-c03a-4127-9548-255544073c5d" Timestamp="633529518480000000" XmlDocIndexTimestamp="633489841300000000" />
+  <Assembly Name="System.Data.DataSetExtensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Image="7356d8be-8bf7-4f88-9df2-f165353d921c" Timestamp="633529518480000000" XmlDocIndexTimestamp="633489841300000000" />
+  <Assembly Name="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Image="e5aae4aa-d05d-4cfd-8a26-32885ecc585a" Timestamp="633640875300000000" XmlDocIndexTimestamp="633492445960000000" />
+  <Assembly Name="System.Xml.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Image="f3b0266b-4c81-4f83-b713-ea178f400d59" Timestamp="633529518480000000" XmlDocIndexTimestamp="633489841300000000" />
+  <Assembly Name="JetBrains.Annotations, Version=4.1.933.3, Culture=neutral, PublicKeyToken=1010a0d8d6380325" Image="3a21f17f-bdf8-48c1-b1d1-393832296313" Timestamp="633559544920000000" XmlDocIndexTimestamp="633559544920000000" />
+  <Assembly Name="Infralution.Licensing.CF, Version=4.4.1.0, Culture=neutral, PublicKeyToken=3e7e8e3744a5c13f" Image="70bd4ee1-ffce-47e9-aaab-f95471e8ef30" Timestamp="633783090440000000" />
+  <Assembly Name="Infralution.Licensing, Version=4.4.1.0, Culture=neutral, PublicKeyToken=3e7e8e3744a5c13f" Image="77fd8ec6-1631-45b3-892b-3dfdd81383ec" Timestamp="633783090420000000" />
+  <Assembly Name="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" Image="7e62ce55-f4de-43b5-a78f-0eff996fe299" Timestamp="633306742940000000" XmlDocIndexTimestamp="633352983840000000" />
+  <Assembly Name="Microsoft.Office.Project.Server.Library, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" Image="37a12d4b-424a-48be-8fbd-6ad994d31466" Timestamp="633235064140000000" />
+  <Assembly Name="Newtonsoft.Json.Net35, Version=4.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed" Image="d73545ea-1cdd-4a14-8762-8c2bb3a36d16" Timestamp="634297258980000000" />
+  <Assembly Name="Microsoft.Office.Project.Server.Events.Receivers, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" Image="62063c40-a5fc-4ea8-af55-39352d8471ad" Timestamp="632974709460000000" />
+  <Assembly Name="Telerik.WinControls, Version=2009.1.9.414, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" Image="8fa6751c-8ae9-4e93-9070-7898345ed798" Timestamp="633754007920000000" XmlDocIndexTimestamp="633754007900000000" />
+  <Assembly Name="Telerik.WinControls.Themes.Office2007Black, Version=2009.1.9.414, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" Image="cd059a8c-8683-463d-a4ac-c5424ac6b845" Timestamp="633754008200000000" />
+  <Assembly Name="Telerik.WinControls.UI, Version=2009.1.9.414, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" Image="fd7e4512-abbe-488c-b890-58585c9dc969" Timestamp="633754008060000000" XmlDocIndexTimestamp="633754008060000000" />
+  <Assembly Name="Telerik.WinControls.UI.Design, Version=2009.1.9.414, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" Image="e4222edb-f559-4860-a614-2010dbbaab0f" Timestamp="633754008260000000" XmlDocIndexTimestamp="633754008260000000" />
+  <Assembly Name="ITXProjectsLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ebfca3a9b29c271a" Image="a0fa64ab-2220-4482-b79e-3534bbad6a48" Timestamp="634383582526929101" />
+</Assemblies>
