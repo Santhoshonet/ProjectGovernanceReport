@@ -4,12 +4,13 @@
     type="text/css" />
 <link href="/_layouts/ITXProjectGovernanceReport/reset.css" rel="stylesheet" type="text/css" />
 <!--[if IE 7]>
-    <link href="_layouts/ITXProjectGovernanceReport/jquery.ganttView_ie7.css" rel="stylesheet"
-    type="text/css" />
+    <link href="_layouts/ITXProjectGovernanceReport/jquery.ganttView_ie7.css" rel="stylesheet" type="text/css" />
 <![endif]-->
 <!--[if IE 8]>
-    <link href="_layouts/ITXProjectGovernanceReport/jquery.ganttView.css" rel="stylesheet"
-    type="text/css" />
+    <link href="_layouts/ITXProjectGovernanceReport/jquery.ganttView.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 9]>
+    <link href="_layouts/ITXProjectGovernanceReport/jquery.ganttView.css" rel="stylesheet" type="text/css" />
 <![endif]-->
 <style type="text/css">
     body
@@ -32,7 +33,6 @@
 <script type="text/javascript" src="/_layouts/ITXProjectGovernanceReport/jquery.ganttView_usercontrol.js"></script>
 
 <script type="text/javascript">
-
     $(function() {
         var data = new Array();
         var output = $.parseJSON($('.jsondata').html());
@@ -90,7 +90,6 @@
                     resizable: false
                 }
             });
-
             // For Project Level Collapse and Expand
             $('Div.ganttview-vtheader-item-name img').attr('collapsestatus', 1).click(function() {
                 if ($(this).attr('collapsestatus') == "1") {
@@ -124,7 +123,6 @@
                     $(this).attr('src', '/_layouts/ITXProjectGovernanceReport/expand.png ');
                 }
             });
-
             // For Group Level Collapse and Expand
             $('Div.ganttview-vtheader-item-name-group img').attr('collapsestatus', 1).click(function() {
                 if ($(this).attr('collapsestatus') == "1") {
@@ -169,11 +167,9 @@
         else {
             $('#ganttChart').html("Report data not available. Contact your administrator for more details.");
         }
-        /*
-        setTimeout(getbackup, 3000);
-        function getbackup() {
-        $('.TempTextArea').val($('body').html());
-        } */
+        //setTimeout(getbackup, 3000);
+        //function getbackup() {
+        //    $('.TempTextArea').val($('body').html());
+        //}
     });
-
 </script>

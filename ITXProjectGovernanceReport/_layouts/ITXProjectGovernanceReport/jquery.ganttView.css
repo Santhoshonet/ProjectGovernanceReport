@@ -112,7 +112,7 @@ div.ganttview-vtheader-series-name
 
 div.ganttview-slide-container
 {
-	overflow: auto;
+	overflow: scroll;
 	border-left: 1px solid #999;
 }
 

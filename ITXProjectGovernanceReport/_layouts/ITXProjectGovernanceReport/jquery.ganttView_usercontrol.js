@@ -22,7 +22,6 @@ onDrag: function,
 onResize: function
 }
 */
-
 (function(jQuery) {
     jQuery.fn.ganttView = function() {
         var args = Array.prototype.slice.call(arguments);
@@ -35,7 +34,6 @@ onResize: function
             handleMethod.call(this, args[0], args[1]);
         }
     };
-
     function build(options) {
         var els = this;
         var defaults = {
@@ -50,15 +48,12 @@ onResize: function
                 resizable: true
             }
         };
-
         var opts = jQuery.extend(true, defaults, options);
-
         if (opts.data) {
             build();
         } else if (opts.dataUrl) {
             jQuery.getJSON(opts.dataUrl, function(data) { opts.data = data; build(); });
         }
-
         function build() {
             var minDays = Math.floor((opts.slideWidth / opts.cellWidth) + 5);
             var startEnd = DateUtils.getBoundaryDatesFromData(opts.data, minDays);
@@ -73,10 +68,16 @@ onResize: function
 					jQuery("div.ganttview-slide-container", container).outerWidth();
                 container.css("width", (w + 2) + "px");
                 new Behavior(container, opts).apply();
+                // to fix ie7 css problem, setting height to ganttview-slide-container
+                var ie7 = $.browser.msie && parseInt($.browser.version) === 7;
+                if (ie7) {
+                    var height = $('.ganttview').height() + 20;
+                    $('.ganttview-slide-container').css({ "height": height + "px" });
+                    $('.ganttview').css({ "height": height + "px" });
+                }
             });
         }
     }
-
     function handleMethod(method, value) {
         if (method == "setSlideWidth") {
             var div = $("div.ganttview", this);
@@ -87,7 +88,6 @@ onResize: function
             });
         }
     }
-
     var Chart = function(div, opts) {
         function render() {
             addVtHeader(div, opts.data, opts.cellHeight);
@@ -103,7 +103,6 @@ onResize: function
             div.append(slideDiv);
             applyLastClass(div.parent());
         }
-
         var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         var graphcolors = ["#bbb", "#c3c3c3", "#ccc", "#d4d4d4", "#ddd", "#e5e5e5", "#eee", "#f6f6f6", "#fff"];
         var ReportHeader = "Project Governance Report";
@@ -125,7 +124,6 @@ onResize: function
             }
             return dates;
         }
-
         function addVtHeader(div, data, cellHeight) {
             var headerDiv = jQuery("<div>", { "class": "ganttview-vtheader" });
             headerDiv.append("<p class='project-details-header'>" + ReportHeader + "</p>");
