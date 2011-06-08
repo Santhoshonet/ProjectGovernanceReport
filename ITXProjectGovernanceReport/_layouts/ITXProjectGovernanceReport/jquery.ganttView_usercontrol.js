@@ -25,11 +25,9 @@ onResize: function
 (function(jQuery) {
     jQuery.fn.ganttView = function() {
         var args = Array.prototype.slice.call(arguments);
-
         if (args.length == 1 && typeof (args[0]) == "object") {
             build.call(this, args[0]);
         }
-
         if (args.length == 2 && typeof (args[0]) == "string") {
             handleMethod.call(this, args[0], args[1]);
         }
@@ -103,6 +101,7 @@ onResize: function
             div.append(slideDiv);
             applyLastClass(div.parent());
         }
+
         var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         var graphcolors = ["#bbb", "#c3c3c3", "#ccc", "#d4d4d4", "#ddd", "#e5e5e5", "#eee", "#f6f6f6", "#fff"];
         var ReportHeader = "Project Governance Report";
@@ -229,12 +228,14 @@ onResize: function
                         var offset = DateUtils.daysBetween(graph_start, series.start);
                         var block = jQuery("<div>", {
                             "class": "ganttview-block",
-                            "title": series.name + ", " + series.start.getDate() + "-" + (series.start.getMonth() + 1).toString() + "-" + series.start.getYear() + " to " + series.end.getDate() + "-" + (series.end.getMonth() + 1) + "-" + series.end.getYear() + ", " + size + " days",
-                            "css": {
-                                "width": (size - 2 + (noofmonths / 2)) + "px",
-                                "margin-left": (offset - 1) + "px"
-                            }
+                            "title": series.name + ", " + series.start.getDate() + "-" + (series.start.getMonth() + 1).toString() + "-" + series.start.getYear() + " to " + series.end.getDate() + "-" + (series.end.getMonth() + 1) + "-" + series.end.getYear() + ", " + size + " days"
                         });
+                        if (size == 1) {
+                            block.css({ "width": "0px", "margin-left": (offset - 1) + "px" });
+                        }
+                        else {
+                            block.css({ "width": (size - 2 + (noofmonths / 2)) + "px", "margin-left": (offset - 1) + "px" });
+                        }
                         addBlockData(block, data[GroupIndex]["projects"][i], series);
                         //if (data[i].series[j].color) {
                         if (j < graphcolors.length)

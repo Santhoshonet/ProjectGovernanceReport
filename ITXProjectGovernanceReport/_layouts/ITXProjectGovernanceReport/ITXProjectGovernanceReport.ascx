@@ -75,6 +75,7 @@
                     data[projectgroupIndex]["projects"][projectseriesIndex]["series"][length] = thash;
                 }
             }
+
             $("#ganttChart").ganttView({
                 data: data,
                 slideWidth: 600,

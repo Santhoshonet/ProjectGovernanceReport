@@ -14,9 +14,7 @@ namespace ITXProjectGovernanceReport._layouts.ITXProjectGovernanceReport
         {
             try
             {
-                string siteurl = SPContext.Current != null
-                                     ? SPContext.Current.Site.Url
-                                     : MyUtilities.ProjectServerInstanceURL;
+                string siteurl = MyUtilities.ProjectServerInstanceURL(SPContext.Current);
                 var result = MyUtilities.GetGovernanceReport(siteurl);
                 JSONData.Text = Serialize(result);
             }

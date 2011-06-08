@@ -5,14 +5,18 @@
 <head runat="server">
     <link href="jquery-ui-1.8.4.css" rel="stylesheet" type="text/css" />
     <link href="reset.css" rel="stylesheet" type="text/css" />
+    <!--[if IE 6]>
+        <link href="jquery.ganttView.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
     <!--[if IE 7]>
-    <link href="jquery.ganttView_ie7.css" rel="stylesheet"
-    type="text/css" />
-<![endif]-->
+        <link href="jquery.ganttView_ie7.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
     <!--[if IE 8]>
-    <link href="jquery.ganttView.css" rel="stylesheet"
-    type="text/css" />
-<![endif]-->
+        <link href="jquery.ganttView.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!--[if IE 9]>
+        <link href="jquery.ganttView.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
     <style type="text/css">
         body
         {
@@ -34,7 +38,7 @@
 
     <script type="text/javascript" src="jquery-ui-1.8.4.js"></script>
 
-    <script type="text/javascript" src="jquery.ganttView.js"></script>
+    <script type="text/javascript" src="jquery.ganttView_usercontrol.js"></script>
 
     <script type="text/javascript">
         $(function() {

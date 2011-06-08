@@ -29,7 +29,13 @@ namespace ITXProjectGovernanceReport._layouts.ITXProjectGovernanceReport
         public static string GroupListName = "ProjectType";
         public static string GroupFieldName = "Group";
         public static string ProjectUIDFieldName = "ProjectUID";
-        public static string ProjectServerInstanceURL = "http://epm2007demo/pwa03";
+
+        public static string ProjectServerInstanceURL(SPContext context)
+        {
+            if (context != null)
+                return context.Site.Url;
+            return "http://epm2007demo/pwa03";
+        }
 
         public static void ErrorLog(string LogStr, EventLogEntryType Type)
         {
@@ -193,22 +199,17 @@ namespace ITXProjectGovernanceReport._layouts.ITXProjectGovernanceReport
                                                                                                              ] +
                                                                                                          @"</Value></Eq></Where>"
                                                                                                  };
-                                                                                 SPListItemCollection collection =
-                                                                                     GroupList.GetItems(query);
+                                                                                 SPListItemCollection collection = GroupList.GetItems(query);
                                                                                  if (collection.Count > 0)
                                                                                  {
                                                                                      SPListItem item = collection[0];
+                                                                                     groupname = item[GroupFieldName].ToString();
                                                                                      var drow = new datarow();
                                                                                      drow.type = "Group";
-                                                                                     drow.title =
-                                                                                         item[GroupFieldName].ToString();
+                                                                                     drow.title = item[GroupFieldName].ToString();
                                                                                      drow.startdate = DateTime.MinValue;
                                                                                      drow.enddate = DateTime.MaxValue;
-
-                                                                                     if (
-                                                                                         grouptable.ContainsKey(
-                                                                                             item[GroupFieldName].
-                                                                                                 ToString()))
+                                                                                     if (grouptable.ContainsKey(item[GroupFieldName].ToString()))
                                                                                      {
                                                                                          datarows =
                                                                                              (List<datarow>)
@@ -253,13 +254,38 @@ namespace ITXProjectGovernanceReport._layouts.ITXProjectGovernanceReport
                                                                                              item[GroupFieldName].
                                                                                                  ToString(), datarows);
                                                                                      }
-
-                                                                                     groupname =
-                                                                                         item[GroupFieldName].ToString();
                                                                                  }
                                                                                  else
                                                                                  {
-                                                                                     groupname = string.Empty;
+                                                                                     groupname = "Not Configured.";
+                                                                                     var drow = new datarow();
+                                                                                     drow.type = "Group";
+                                                                                     drow.title = groupname;
+                                                                                     drow.startdate = DateTime.MinValue;
+                                                                                     drow.enddate = DateTime.MaxValue;
+                                                                                     if (grouptable.ContainsKey(groupname))
+                                                                                     {
+                                                                                         datarows = (List<datarow>)grouptable[groupname];
+                                                                                         drow = new datarow();
+                                                                                         drow.type = "Project";
+                                                                                         drow.startdate = Convert.ToDateTime(row["Start"]);
+                                                                                         drow.enddate = Convert.ToDateTime(row["End"]);
+                                                                                         drow.title = row["Title"].ToString();
+                                                                                         datarows.Add(drow);
+                                                                                         grouptable[groupname] = datarows;
+                                                                                     }
+                                                                                     else
+                                                                                     {
+                                                                                         datarows = new List<datarow>();
+                                                                                         datarows.Add(drow);
+                                                                                         drow = new datarow();
+                                                                                         drow.type = "Project";
+                                                                                         drow.startdate = Convert.ToDateTime(row["Start"]);
+                                                                                         drow.enddate = Convert.ToDateTime(row["End"]);
+                                                                                         drow.title = row["Title"].ToString();
+                                                                                         datarows.Add(drow);
+                                                                                         grouptable.Add(groupname, datarows);
+                                                                                     }
                                                                                  }
                                                                              }
                                                                              else if (groupname != string.Empty)
@@ -282,9 +308,7 @@ namespace ITXProjectGovernanceReport._layouts.ITXProjectGovernanceReport
                                                                          // Adding the rows into datatable
                                                                          foreach (DictionaryEntry drws in grouptable)
                                                                          {
-                                                                             foreach (
-                                                                                 datarow drow in
-                                                                                     (List<datarow>)drws.Value)
+                                                                             foreach (datarow drow in (List<datarow>)drws.Value)
                                                                              {
                                                                                  DataRow row = ResultDataTable.NewRow();
                                                                                  row["Title"] = drow.title;
@@ -849,7 +873,7 @@ namespace ITXProjectGovernanceReport._layouts.ITXProjectGovernanceReport
             var ResultTaskTable = new DataTable();
             try
             {
-                string SiteUrl = context != null ? context.Site.Url : ProjectServerInstanceURL;
+                string SiteUrl = ProjectServerInstanceURL(context);
                 SPSecurity.RunWithElevatedPrivileges(delegate
                                                          {
                                                              using (var site = new SPSite(SiteUrl))
