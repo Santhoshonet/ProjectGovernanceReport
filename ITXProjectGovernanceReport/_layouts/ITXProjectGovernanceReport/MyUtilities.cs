@@ -4,10 +4,16 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.IO;
+using System.Linq;
 using System.Security.Principal;
+using ITXPGReportDataLayer;
 using ITXProjectsLibrary;
 using ITXProjectsLibrary.WebSvcCustomFields;
 using Microsoft.SharePoint;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Telerik.OpenAccess;
 using DataStoreEnum = ITXProjectsLibrary.WebSvcProject.DataStoreEnum;
 using Project = ITXProjectsLibrary.WebSvcProject.Project;
 using ProjectDataSet = ITXProjectsLibrary.WebSvcProject.ProjectDataSet;
@@ -25,16 +31,25 @@ namespace ITXProjectGovernanceReport._layouts.ITXProjectGovernanceReport
 {
     public class MyUtilities
     {
+        // Project Governance Report Database name here
+        public static bool IndividualPages = true;
+        public static string GovernanceReportGroupConfigDBname = "ITXPGReportDataLayer"; //"ITXBaseLineLogs";//
+
         public static string CustomFieldName = "CIMBTaskType";
         public static string GroupListName = "ProjectType";
         public static string GroupFieldName = "Group";
         public static string ProjectUIDFieldName = "ProjectUID";
 
+        public static string Project_Stream_Fieldname = "Program_Code";
+        public static string Project_Status_Fieldname = "Project Status";
+
+        public static bool DevelopMode = true;
+
         public static string ProjectServerInstanceURL(SPContext context)
         {
             if (context != null)
                 return context.Site.Url;
-            return "http://epm2007demo/pwa03";
+            return "http://epm2007demo/pwa04";
         }
 
         public static void ErrorLog(string LogStr, EventLogEntryType Type)
@@ -60,7 +75,8 @@ namespace ITXProjectGovernanceReport._layouts.ITXProjectGovernanceReport
         {
             try
             {
-                var Writer = new System.IO.StreamWriter(@"c:\ITXProjectGovernanceReport.txt", true);
+                System.Security.Principal.WindowsImpersonationContext wic = WindowsIdentity.Impersonate(IntPtr.Zero);
+                var Writer = new StreamWriter(@"c:\ITXProjectGovernanceReport.txt", true);
                 Writer.WriteLine(LogStr);
                 Writer.Close();
                 Writer.Dispose();
@@ -71,7 +87,7 @@ namespace ITXProjectGovernanceReport._layouts.ITXProjectGovernanceReport
             }
         }
 
-        public static DataTable GetGovernanceReport(string SiteUrl)
+        public static DataTable GetGovernanceReport(string SiteUrl, Guid CurrentUserUID)
         {
             var ResultDataTable = new DataTable();
             ResultDataTable.Columns.Add("Title");
@@ -83,249 +99,266 @@ namespace ITXProjectGovernanceReport._layouts.ITXProjectGovernanceReport
                 //User Impersionation
                 WindowsImpersonationContext wik = null;
                 SPSecurity.RunWithElevatedPrivileges(delegate
-                                                         {
-                                                             using (var Site = new SPSite(SiteUrl))
-                                                             {
-                                                                 SiteUrl = Utilities.GetDefaultZoneUri(Site);
+                {
+                    using (var Site = new SPSite(SiteUrl))
+                    {
+                        SiteUrl = Utilities.GetDefaultZoneUri(Site);
 
-                                                                 SPList GroupList = null;
-                                                                 try
-                                                                 {
-                                                                     GroupList = Site.RootWeb.Lists[GroupListName];
-                                                                 }
-                                                                 catch (Exception)
-                                                                 {
-                                                                 }
-                                                                 if (GroupList == null)
-                                                                 {
-                                                                     ErrorLog("The Project Group Configuration List called  " + GroupListName + " not found in the Site called " + SiteUrl, EventLogEntryType.Error);
-                                                                 }
-                                                                 else
-                                                                 {
-                                                                     try
-                                                                     {
-                                                                         wik = WindowsIdentity.Impersonate(IntPtr.Zero);
-                                                                     }
-                                                                     catch (Exception)
-                                                                     { }
+                        try
+                        {
+                            wik = WindowsIdentity.Impersonate(IntPtr.Zero);
+                        }
+                        catch (Exception)
+                        { }
 
-                                                                     var Project_Svc = new Project()
-                                                                                           {
-                                                                                               AllowAutoRedirect = true,
-                                                                                               Url = SiteUrl + "/_vti_bin/psi/project.asmx",
-                                                                                               UseDefaultCredentials = true
-                                                                                           };
+                        ModifyConnectionString(SiteUrl);
 
-                                                                     var CustomField_Svc = new CustomFields()
-                                                                                               {
-                                                                                                   AllowAutoRedirect =
-                                                                                                       true,
-                                                                                                   Url =
-                                                                                                       SiteUrl +
-                                                                                                       "/_vti_bin/psi/customfields.asmx",
-                                                                                                   UseDefaultCredentials
-                                                                                                       = true
-                                                                                               };
-                                                                     if (Utilities.IsCustomFieldFound(CustomField_Svc, CustomFieldName))
-                                                                     {
-                                                                         var ProjectIDs =
-                                                                             Utilities.GetProjectUIDList(Project_Svc,
-                                                                                                         false, false);
+                        using (IObjectScope scope = ObjectScopeProvider1.GetNewObjectScope())
+                        {
+                            // Adding the current user if not exits
+                            int count = (from c in scope.GetOqlQuery<Users>().ExecuteEnumerable()
+                                         where c.ResourceUID.Equals(CurrentUserUID.ToString())
+                                         select c).Count();
+                            if (count == 0)
+                            {
+                                scope.Transaction.Begin();
+                                var user = new Users();
+                                user.ResourceUID = CurrentUserUID.ToString();
+                                scope.Add(user);
+                                scope.Transaction.Commit();
+                            }
 
-                                                                         string ProjectsList = string.Empty;
-                                                                         foreach (var projectID in ProjectIDs)
-                                                                         {
-                                                                             if (ProjectsList == string.Empty)
-                                                                                 ProjectsList += "('" + projectID;
-                                                                             else
-                                                                                 ProjectsList += "','" + projectID;
-                                                                         }
-                                                                         ProjectsList += "')";
+                            List<Users> users = (from c in scope.GetOqlQuery<Users>().ExecuteEnumerable()
+                                                 where c.ResourceUID.Equals(CurrentUserUID.ToString())
+                                                 select c).ToList();
 
-                                                                         string Qry =
-                                                                             @"SELECT  ProjectUID, ProjectName, ProjectStartDate, ProjectFinishDate, '0' as [Type]
-                                                                                            into #t1
-                                                                                        FROM         MSP_EpmProject_UserView
+                            var Project_Svc = new Project()
+                                                  {
+                                                      AllowAutoRedirect = true,
+                                                      Url = SiteUrl + "/_vti_bin/psi/project.asmx",
+                                                      UseDefaultCredentials = true
+                                                  };
 
-                                                                                        SELECT     ProjectUID, " +
-                                                                             CustomFieldName +
-                                                                             @" AS Title, MIN(TaskStartDate) AS Start, MAX(TaskFinishDate) AS [End], '1' as [Type]
-                                                                                        into #t2
-                                                                                        FROM         MSP_EpmTask_UserView
-                                                                                        GROUP BY " +
-                                                                             CustomFieldName +
-                                                                             @", ProjectUID
-                                                                                        HAVING      (CIMBTaskType IS NOT NULL)
+                            var CustomField_Svc = new CustomFields()
+                                                      {
+                                                          AllowAutoRedirect = true,
+                                                          Url = SiteUrl + "/_vti_bin/psi/customfields.asmx",
+                                                          UseDefaultCredentials = true
+                                                      };
 
-                                                                                        INSERT into #t2
-                                                                                        select #t1.ProjectUID, #t1.ProjectName, #t1.ProjectStartDate, #t1.ProjectFinishDate, #t1.[Type]
-                                                                                        FROM #t1 INNER JOIN (SELECT DISTINCT #t2.ProjectUID from #t2) AS t2temp ON t2temp.ProjectUID =#t1.ProjectUID
+                            if (Utilities.IsCustomFieldFound(CustomField_Svc, CustomFieldName))
+                            {
+                                var ProjectIDs = Utilities.GetProjectUIDList(Project_Svc, false, false);
 
-                                                                                        SELECT     *
-                                                                                        FROM         [#t2]
-                                                                                        where ProjectUID in " +
-                                                                             ProjectsList +
-                                                                             @"
-                                                                                        ORDER BY ProjectUID,[Type], Start
+                                string ProjectsList = string.Empty;
+                                foreach (var projectID in ProjectIDs)
+                                {
+                                    if (projectID != Guid.Empty)
+                                    {
+                                        if (ProjectsList == string.Empty)
+                                            ProjectsList += "('" + projectID;
+                                        else
+                                            ProjectsList += "','" + projectID;
+                                    }
+                                }
+                                ProjectsList += "')";
+                                string Qry =
+                                     @"SELECT  puv.ProjectUID,puv." + Project_Stream_Fieldname + @", puv.ProjectName, puv.ProjectStartDate, puv.ProjectFinishDate, '0' as [Type]
+                                into #t1
+                                FROM         MSP_EpmProject_UserView as puv
+                                WHERE      (puv.[" + Project_Status_Fieldname + @"] <> N'[Closed]') AND (puv.[" + Project_Status_Fieldname + @"] <> N'[Cancelled]') AND (puv.[" + Project_Status_Fieldname + @"] <> N'[Replaced]')
+                                SELECT     tuv.ProjectUID, puv." + Project_Stream_Fieldname + @", " +
+                                 CustomFieldName +
+                                 @" AS Title, MIN(tuv.TaskStartDate) AS Start, MAX(tuv.TaskFinishDate) AS [End], '1' as [Type]
+                                into #t2
+                                FROM        MSP_EpmTask_UserView AS tuv INNER JOIN
+                                            MSP_EpmProject_UserView AS puv ON tuv.ProjectUID = puv.ProjectUID
+                                WHERE      (puv.[" + Project_Status_Fieldname + @"] <> N'[Closed]') AND (puv.[" + Project_Status_Fieldname + @"] <> N'[Cancelled]') AND (puv.[" + Project_Status_Fieldname + @"] <> N'[Replaced]')
+                                GROUP BY " + CustomFieldName + @", puv.Program_Code, tuv.ProjectUID HAVING (CIMBTaskType IS NOT NULL)
+                                INSERT into #t2
+                                select #t1.ProjectUID,#t1.Program_Code, #t1.ProjectName, #t1.ProjectStartDate, #t1.ProjectFinishDate, #t1.[Type]
+                                FROM #t1 INNER JOIN (SELECT DISTINCT #t2.ProjectUID from #t2) AS t2temp ON t2temp.ProjectUID =#t1.ProjectUID
+                                SELECT     *
+                                FROM         [#t2]
+                                where ProjectUID in " +
+                                 ProjectsList +
+                                 @"
+                                ORDER BY ProjectUID,[Type], Start
+                                drop table #t1
+                                drop table #t2";
 
-                                                                                        drop table #t1
-                                                                                        drop table #t2";
+                                var Conn = new SqlConnection(GetDataBaseConnectionString(SiteUrl));
+                                Conn.Open();
 
-                                                                         var Conn =
-                                                                             new SqlConnection(
-                                                                                 GetDataBaseConnectionString(SiteUrl));
-                                                                         Conn.Open();
+                                var Result_set = new DataSet();
+                                var Adapter = new SqlDataAdapter(new SqlCommand(Qry, Conn));
+                                Adapter.Fill(Result_set);
 
-                                                                         var Result_set = new DataSet();
-                                                                         var Adapter =
-                                                                             new SqlDataAdapter(new SqlCommand(Qry, Conn));
-                                                                         Adapter.Fill(Result_set);
+                                DataRow newrow;
+                                var grouptable = new Hashtable();
+                                var datarows = new List<datarow>();
+                                string groupname = string.Empty;
+                                foreach (DataRow row in Result_set.Tables[0].Rows)
+                                {
+                                    if (row["Type"].ToString() == "0")
+                                    {
+                                        List<Groups> groups =
+                                            (from c in scope.GetOqlQuery<Users>().ExecuteEnumerable()
+                                             from d in c.groups
+                                             from e in d.projects
+                                             where
+                                                 c.ResourceUID.Equals(CurrentUserUID.ToString()) &&
+                                                 e.uid.Equals(row["ProjectUID"].ToString())
+                                             select d).ToList();
+                                        if (groups.Count > 0)
+                                        {
+                                            groupname = groups[0].name;
+                                            var drow = new datarow();
+                                            drow.type = "Group";
+                                            drow.title = groupname;
+                                            drow.startdate = DateTime.MinValue;
+                                            drow.enddate = DateTime.MaxValue;
+                                            if (grouptable.ContainsKey(groupname))
+                                            {
+                                                datarows = (List<datarow>)grouptable[groupname];
 
-                                                                         DataRow newrow;
-                                                                         var grouptable = new Hashtable();
-                                                                         var datarows = new List<datarow>();
-                                                                         string groupname = string.Empty;
-                                                                         foreach (
-                                                                             DataRow row in Result_set.Tables[0].Rows)
-                                                                         {
-                                                                             if (row["Type"].ToString() == "0")
-                                                                             {
-                                                                                 var query = new SPQuery
-                                                                                                 {
-                                                                                                     Query =
-                                                                                                         @"<Where><Eq><FieldRef Name='ProjectUID' /><Value Type='Text'>" +
-                                                                                                         row[
-                                                                                                             "ProjectUID"
-                                                                                                             ] +
-                                                                                                         @"</Value></Eq></Where>"
-                                                                                                 };
-                                                                                 SPListItemCollection collection = GroupList.GetItems(query);
-                                                                                 if (collection.Count > 0)
-                                                                                 {
-                                                                                     SPListItem item = collection[0];
-                                                                                     groupname = item[GroupFieldName].ToString();
-                                                                                     var drow = new datarow();
-                                                                                     drow.type = "Group";
-                                                                                     drow.title = item[GroupFieldName].ToString();
-                                                                                     drow.startdate = DateTime.MinValue;
-                                                                                     drow.enddate = DateTime.MaxValue;
-                                                                                     if (grouptable.ContainsKey(item[GroupFieldName].ToString()))
-                                                                                     {
-                                                                                         datarows =
-                                                                                             (List<datarow>)
-                                                                                             grouptable[
-                                                                                                 item[GroupFieldName].
-                                                                                                     ToString()];
+                                                drow = new datarow();
+                                                drow.type = "Project";
+                                                drow.startdate = Convert.ToDateTime(row["Start"]);
+                                                drow.enddate = Convert.ToDateTime(row["End"]);
+                                                drow.title = row["Title"].ToString();
 
-                                                                                         drow = new datarow();
-                                                                                         drow.type = "Project";
-                                                                                         drow.startdate =
-                                                                                             Convert.ToDateTime(
-                                                                                                 row["Start"]);
-                                                                                         drow.enddate =
-                                                                                             Convert.ToDateTime(
-                                                                                                 row["End"]);
-                                                                                         drow.title =
-                                                                                             row["Title"].ToString();
+                                                datarows.Add(drow);
+                                                grouptable[groupname] = datarows;
+                                            }
+                                            else
+                                            {
+                                                datarows = new List<datarow>();
+                                                datarows.Add(drow);
 
-                                                                                         datarows.Add(drow);
-                                                                                         grouptable[
-                                                                                             item[GroupFieldName].
-                                                                                                 ToString()] = datarows;
-                                                                                     }
-                                                                                     else
-                                                                                     {
-                                                                                         datarows = new List<datarow>();
-                                                                                         datarows.Add(drow);
+                                                drow = new datarow();
+                                                drow.type = "Project";
+                                                drow.startdate = Convert.ToDateTime(row["Start"]);
+                                                drow.enddate = Convert.ToDateTime(row["End"]);
+                                                drow.title = row["Title"].ToString();
 
-                                                                                         drow = new datarow();
-                                                                                         drow.type = "Project";
-                                                                                         drow.startdate =
-                                                                                             Convert.ToDateTime(
-                                                                                                 row["Start"]);
-                                                                                         drow.enddate =
-                                                                                             Convert.ToDateTime(
-                                                                                                 row["End"]);
-                                                                                         drow.title =
-                                                                                             row["Title"].ToString();
+                                                datarows.Add(drow);
+                                                grouptable.Add(groupname, datarows);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            groupname = string.Empty;
+                                            string[] streams = row["Program_Code"].ToString().Split('.');
+                                            if (streams.Length > 3)
+                                                groupname = streams[4];
+                                            else if (streams.Length > 0)
+                                                groupname = streams[streams.Length - 1];
+                                            if (groupname == string.Empty)
+                                                groupname = "Not Configured.";
 
-                                                                                         datarows.Add(drow);
-                                                                                         grouptable.Add(
-                                                                                             item[GroupFieldName].
-                                                                                                 ToString(), datarows);
-                                                                                     }
-                                                                                 }
-                                                                                 else
-                                                                                 {
-                                                                                     groupname = "Not Configured.";
-                                                                                     var drow = new datarow();
-                                                                                     drow.type = "Group";
-                                                                                     drow.title = groupname;
-                                                                                     drow.startdate = DateTime.MinValue;
-                                                                                     drow.enddate = DateTime.MaxValue;
-                                                                                     if (grouptable.ContainsKey(groupname))
-                                                                                     {
-                                                                                         datarows = (List<datarow>)grouptable[groupname];
-                                                                                         drow = new datarow();
-                                                                                         drow.type = "Project";
-                                                                                         drow.startdate = Convert.ToDateTime(row["Start"]);
-                                                                                         drow.enddate = Convert.ToDateTime(row["End"]);
-                                                                                         drow.title = row["Title"].ToString();
-                                                                                         datarows.Add(drow);
-                                                                                         grouptable[groupname] = datarows;
-                                                                                     }
-                                                                                     else
-                                                                                     {
-                                                                                         datarows = new List<datarow>();
-                                                                                         datarows.Add(drow);
-                                                                                         drow = new datarow();
-                                                                                         drow.type = "Project";
-                                                                                         drow.startdate = Convert.ToDateTime(row["Start"]);
-                                                                                         drow.enddate = Convert.ToDateTime(row["End"]);
-                                                                                         drow.title = row["Title"].ToString();
-                                                                                         datarows.Add(drow);
-                                                                                         grouptable.Add(groupname, datarows);
-                                                                                     }
-                                                                                 }
-                                                                             }
-                                                                             else if (groupname != string.Empty)
-                                                                             {
-                                                                                 datarows =
-                                                                                     (List<datarow>)
-                                                                                     grouptable[groupname];
-                                                                                 var drow = new datarow();
-                                                                                 drow.title = row["Title"].ToString();
-                                                                                 drow.startdate =
-                                                                                     Convert.ToDateTime(row["Start"]);
-                                                                                 drow.enddate =
-                                                                                     Convert.ToDateTime(row["End"]);
-                                                                                 drow.type = "CF";
-                                                                                 datarows.Add(drow);
-                                                                                 grouptable[groupname] = datarows;
-                                                                             }
-                                                                         }
+                                            groups =
+                                                (from c in scope.GetOqlQuery<Users>().ExecuteEnumerable()
+                                                 from d in c.groups
+                                                 where
+                                                     c.ResourceUID.Equals(CurrentUserUID.ToString()) &&
+                                                     d.name.Equals(groupname)
+                                                 select d).ToList();
+                                            if (groups.Count == 0)
+                                            {
+                                                scope.Transaction.Begin();
+                                                var group = new Groups();
+                                                group.name = groupname;
+                                                group.UID = Guid.NewGuid().ToString();
+                                                var project = new Projects();
+                                                project.name = row["Title"].ToString();
+                                                project.uid = row["ProjectUID"].ToString();
+                                                group.projects.Add(project);
+                                                users[0].groups.Add(group);
+                                                scope.Add(users[0]);
+                                                scope.Transaction.Commit();
+                                            }
+                                            else
+                                            {
+                                                scope.Transaction.Begin();
+                                                var project = new Projects();
+                                                project.name = row["Title"].ToString();
+                                                project.uid = row["ProjectUID"].ToString();
+                                                groups[0].projects.Add(project);
+                                                scope.Add(groups[0]);
+                                                scope.Transaction.Commit();
+                                            }
 
-                                                                         // Adding the rows into datatable
-                                                                         foreach (DictionaryEntry drws in grouptable)
-                                                                         {
-                                                                             foreach (datarow drow in (List<datarow>)drws.Value)
-                                                                             {
-                                                                                 DataRow row = ResultDataTable.NewRow();
-                                                                                 row["Title"] = drow.title;
-                                                                                 row["Start"] = drow.startdate;
-                                                                                 row["Finish"] = drow.enddate;
-                                                                                 row["Type"] = drow.type;
-                                                                                 ResultDataTable.Rows.Add(row);
-                                                                             }
-                                                                         }
-                                                                     }
-                                                                     else
-                                                                     {
-                                                                         ErrorLog("The Custom field called " + CustomFieldName + " is not found in the instanse " + Site.Url, EventLogEntryType.FailureAudit);
-                                                                     }
-                                                                 }
-                                                             }
-                                                         }
+                                            var drow = new datarow();
+                                            drow.type = "Group";
+                                            drow.title = groupname;
+                                            drow.startdate = DateTime.MinValue;
+                                            drow.enddate = DateTime.MaxValue;
+                                            if (grouptable.ContainsKey(groupname))
+                                            {
+                                                datarows = (List<datarow>)grouptable[groupname];
+                                                drow = new datarow();
+                                                drow.type = "Project";
+                                                drow.startdate = Convert.ToDateTime(row["Start"]);
+                                                drow.enddate = Convert.ToDateTime(row["End"]);
+                                                drow.title = row["Title"].ToString();
+                                                datarows.Add(drow);
+                                                grouptable[groupname] = datarows;
+                                            }
+                                            else
+                                            {
+                                                datarows = new List<datarow>();
+                                                datarows.Add(drow);
+                                                drow = new datarow();
+                                                drow.type = "Project";
+                                                drow.startdate = Convert.ToDateTime(row["Start"]);
+                                                drow.enddate = Convert.ToDateTime(row["End"]);
+                                                drow.title = row["Title"].ToString();
+                                                datarows.Add(drow);
+                                                grouptable.Add(groupname, datarows);
+                                            }
+                                        }
+                                    }
+                                    else if (groupname != string.Empty)
+                                    {
+                                        datarows =
+                                            (List<datarow>)
+                                            grouptable[groupname];
+                                        var drow = new datarow();
+                                        drow.title = row["Title"].ToString();
+                                        drow.startdate =
+                                            Convert.ToDateTime(row["Start"]);
+                                        drow.enddate =
+                                            Convert.ToDateTime(row["End"]);
+                                        drow.type = "CF";
+                                        datarows.Add(drow);
+                                        grouptable[groupname] = datarows;
+                                    }
+                                }
+
+                                // Adding the rows into datatable
+                                foreach (DictionaryEntry drws in grouptable)
+                                {
+                                    foreach (datarow drow in (List<datarow>)drws.Value)
+                                    {
+                                        DataRow row = ResultDataTable.NewRow();
+                                        row["Title"] = drow.title;
+                                        row["Start"] = drow.startdate;
+                                        row["Finish"] = drow.enddate;
+                                        row["Type"] = drow.type;
+                                        ResultDataTable.Rows.Add(row);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                ErrorLog(
+                                    "The Custom field called " + CustomFieldName + " is not found in the instanse " +
+                                    Site.Url, EventLogEntryType.FailureAudit);
+                            }
+                        }
+                    }
+                }
                     );
             }
             catch (Exception ex)
@@ -334,6 +367,442 @@ namespace ITXProjectGovernanceReport._layouts.ITXProjectGovernanceReport
             }
             return ResultDataTable;
         }
+
+        public static DataTable GetProjects_DataTable(string SiteUrl, Guid CurrentUserUID)
+        {
+            var ResultDataTable = new DataTable();
+            ResultDataTable.Columns.Add("ProjectUID");
+            ResultDataTable.Columns.Add("Title");
+            try
+            {
+                //User Impersionation
+                WindowsImpersonationContext wik = null;
+                SPSecurity.RunWithElevatedPrivileges(delegate
+                {
+                    using (var Site = new SPSite(SiteUrl))
+                    {
+                        SiteUrl = Utilities.GetDefaultZoneUri(Site);
+
+                        try
+                        {
+                            wik = WindowsIdentity.Impersonate(IntPtr.Zero);
+                        }
+                        catch (Exception)
+                        { }
+
+                        ModifyConnectionString(SiteUrl);
+
+                        using (IObjectScope scope = ObjectScopeProvider1.GetNewObjectScope())
+                        {
+                            List<Users> users = (from c in scope.GetOqlQuery<Users>().ExecuteEnumerable()
+                                                 where c.ResourceUID.Equals(CurrentUserUID.ToString())
+                                                 select c).ToList();
+
+                            var Project_Svc = new Project()
+                            {
+                                AllowAutoRedirect = true,
+                                Url = SiteUrl + "/_vti_bin/psi/project.asmx",
+                                UseDefaultCredentials = true
+                            };
+
+                            var CustomField_Svc = new CustomFields()
+                            {
+                                AllowAutoRedirect = true,
+                                Url = SiteUrl + "/_vti_bin/psi/customfields.asmx",
+                                UseDefaultCredentials = true
+                            };
+
+                            if (Utilities.IsCustomFieldFound(CustomField_Svc, CustomFieldName))
+                            {
+                                var ProjectIDs = Utilities.GetProjectUIDList(Project_Svc, false, false);
+
+                                string ProjectsList = string.Empty;
+                                foreach (var projectID in ProjectIDs)
+                                {
+                                    if (projectID != Guid.Empty)
+                                    {
+                                        if (ProjectsList == string.Empty)
+                                            ProjectsList += "('" + projectID;
+                                        else
+                                            ProjectsList += "','" + projectID;
+                                    }
+                                }
+                                ProjectsList += "')";
+
+                                string Qry =
+                                    @"SELECT  puv.ProjectUID,puv." + Project_Stream_Fieldname + @", puv.ProjectName, puv.ProjectStartDate, puv.ProjectFinishDate, '0' as [Type]
+                                into #t1
+                                FROM         MSP_EpmProject_UserView as puv
+                                WHERE      (puv.[" + Project_Status_Fieldname + @"] <> N'[Closed]') AND (puv.[" + Project_Status_Fieldname + @"] <> N'[Cancelled]') AND (puv.[" + Project_Status_Fieldname + @"] <> N'[Replaced]')
+                                SELECT     tuv.ProjectUID, puv." + Project_Stream_Fieldname + @", " +
+                                CustomFieldName +
+                                @" AS Title, MIN(tuv.TaskStartDate) AS Start, MAX(tuv.TaskFinishDate) AS [End], '1' as [Type]
+                                into #t2
+                                FROM        MSP_EpmTask_UserView AS tuv INNER JOIN
+                                            MSP_EpmProject_UserView AS puv ON tuv.ProjectUID = puv.ProjectUID
+                                WHERE      (puv.[" + Project_Status_Fieldname + @"] <> N'[Closed]') AND (puv.[" + Project_Status_Fieldname + @"] <> N'[Cancelled]') AND (puv.[" + Project_Status_Fieldname + @"] <> N'[Replaced]')
+                                GROUP BY " + CustomFieldName + @", puv.Program_Code, tuv.ProjectUID HAVING (CIMBTaskType IS NOT NULL)
+                                INSERT into #t2
+                                select #t1.ProjectUID,#t1.Program_Code, #t1.ProjectName, #t1.ProjectStartDate, #t1.ProjectFinishDate, #t1.[Type]
+                                FROM #t1 INNER JOIN (SELECT DISTINCT #t2.ProjectUID from #t2) AS t2temp ON t2temp.ProjectUID =#t1.ProjectUID
+                                SELECT     ProjectUID,Title,Program_Code
+                                FROM         [#t2]
+                                where ProjectUID in " +
+                                ProjectsList +
+                                @" and [Type] = 0
+                                ORDER BY ProjectUID,[Type], Start
+                                drop table #t1
+                                drop table #t2";
+
+                                var Conn = new SqlConnection(GetDataBaseConnectionString(SiteUrl));
+                                Conn.Open();
+
+                                var Result_set = new DataSet();
+                                var Adapter = new SqlDataAdapter(new SqlCommand(Qry, Conn));
+                                Adapter.Fill(Result_set);
+
+                                string groupname = string.Empty;
+                                foreach (DataRow row in Result_set.Tables[0].Rows)
+                                {
+                                    List<Groups> groups =
+                                        (from c in scope.GetOqlQuery<Users>().ExecuteEnumerable()
+                                         from d in c.groups
+                                         from e in d.projects
+                                         where
+                                             c.ResourceUID.Equals(CurrentUserUID.ToString()) &&
+                                             e.uid.Equals(row["ProjectUID"].ToString())
+                                         select d).ToList();
+                                    if (groups.Count > 0)
+                                    {
+                                        DataRow new_row = ResultDataTable.NewRow();
+                                        new_row["ProjectUID"] = row["ProjectUID"].ToString();
+                                        new_row["Title"] = row["Title"].ToString();
+                                        ResultDataTable.Rows.Add(new_row);
+                                    }
+                                    else
+                                    {
+                                        groupname = string.Empty;
+                                        string[] streams = row["Program_Code"].ToString().Split('.');
+                                        if (streams.Length > 3)
+                                            groupname = streams[4];
+                                        else if (streams.Length > 0)
+                                            groupname = streams[streams.Length - 1];
+                                        if (groupname == string.Empty)
+                                            groupname = "Not Configured.";
+
+                                        groups =
+                                            (from c in scope.GetOqlQuery<Users>().ExecuteEnumerable()
+                                             from d in c.groups
+                                             where
+                                                 c.ResourceUID.Equals(CurrentUserUID.ToString()) &&
+                                                 d.name.Equals(groupname)
+                                             select d).ToList();
+                                        if (groups.Count == 0)
+                                        {
+                                            scope.Transaction.Begin();
+                                            var group = new Groups();
+                                            group.name = groupname;
+                                            group.UID = Guid.NewGuid().ToString();
+                                            var project = new Projects();
+                                            project.name = row["Title"].ToString();
+                                            project.uid = row["ProjectUID"].ToString();
+                                            group.projects.Add(project);
+                                            users[0].groups.Add(group);
+                                            scope.Add(users[0]);
+                                            scope.Transaction.Commit();
+                                        }
+                                        else
+                                        {
+                                            scope.Transaction.Begin();
+                                            var project = new Projects();
+                                            project.name = row["Title"].ToString();
+                                            project.uid = row["ProjectUID"].ToString();
+                                            groups[0].projects.Add(project);
+                                            scope.Add(groups[0]);
+                                            scope.Transaction.Commit();
+                                        }
+                                        DataRow new_row = ResultDataTable.NewRow();
+                                        new_row["ProjectUID"] = row["ProjectUID"].ToString();
+                                        new_row["Title"] = row["Title"].ToString();
+                                        ResultDataTable.Rows.Add(new_row);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                ErrorLog(
+                                    "The Custom field called " + CustomFieldName + " is not found in the instanse " +
+                                    Site.Url, EventLogEntryType.FailureAudit);
+                            }
+                        }
+                    }
+                }
+                    );
+            }
+            catch (Exception ex)
+            {
+                ErrorLog("Error at loading project list due to " + ex.Message, EventLogEntryType.Error);
+            }
+            return ResultDataTable;
+        }
+
+        #region "Version 3"
+
+        //        public static DataTable GetGovernanceReport(string SiteUrl)
+        //        {
+        //            var ResultDataTable = new DataTable();
+        //            ResultDataTable.Columns.Add("Title");
+        //            ResultDataTable.Columns.Add("Start");
+        //            ResultDataTable.Columns.Add("Finish");
+        //            ResultDataTable.Columns.Add("Type");
+        //            try
+        //            {
+        //                //User Impersionation
+        //                WindowsImpersonationContext wik = null;
+        //                SPSecurity.RunWithElevatedPrivileges(delegate
+        //                {
+        //                    using (var Site = new SPSite(SiteUrl))
+        //                    {
+        //                        SiteUrl = Utilities.GetDefaultZoneUri(Site);
+
+        //                        SPList GroupList = null;
+        //                        try
+        //                        {
+        //                            GroupList = Site.RootWeb.Lists[GroupListName];
+        //                        }
+        //                        catch (Exception)
+        //                        {
+        //                        }
+        //                        if (GroupList == null)
+        //                        {
+        //                            ErrorLog("The Project Group Configuration List called  " + GroupListName + " not found in the Site called " + SiteUrl, EventLogEntryType.Error);
+        //                        }
+        //                        else
+        //                        {
+        //                            try
+        //                            {
+        //                                wik = WindowsIdentity.Impersonate(IntPtr.Zero);
+        //                            }
+        //                            catch (Exception)
+        //                            { }
+
+        //                            var Project_Svc = new Project()
+        //                            {
+        //                                AllowAutoRedirect = true,
+        //                                Url = SiteUrl + "/_vti_bin/psi/project.asmx",
+        //                                UseDefaultCredentials = true
+        //                            };
+
+        //                            var CustomField_Svc = new CustomFields()
+        //                            {
+        //                                AllowAutoRedirect = true,
+        //                                Url = SiteUrl + "/_vti_bin/psi/customfields.asmx",
+        //                                UseDefaultCredentials = true
+        //                            };
+        //                            if (Utilities.IsCustomFieldFound(CustomField_Svc, CustomFieldName))
+        //                            {
+        //                                var ProjectIDs = Utilities.GetProjectUIDList(Project_Svc, false, false);
+
+        //                                string ProjectsList = string.Empty;
+        //                                foreach (var projectID in ProjectIDs)
+        //                                {
+        //                                    if (ProjectsList == string.Empty)
+        //                                        ProjectsList += "('" + projectID;
+        //                                    else
+        //                                        ProjectsList += "','" + projectID;
+        //                                }
+        //                                ProjectsList += "')";
+
+        //                                string Qry =
+        //                                    @"SELECT  ProjectUID, ProjectName, ProjectStartDate, ProjectFinishDate, '0' as [Type]
+        //                                                                                            into #t1
+        //                                                                                        FROM         MSP_EpmProject_UserView
+        //
+        //                                                                                        SELECT     ProjectUID, " +
+        //                                    CustomFieldName +
+        //                                    @" AS Title, MIN(TaskStartDate) AS Start, MAX(TaskFinishDate) AS [End], '1' as [Type]
+        //                                                                                        into #t2
+        //                                                                                        FROM         MSP_EpmTask_UserView
+        //                                                                                        GROUP BY " +
+        //                                    CustomFieldName +
+        //                                    @", ProjectUID
+        //                                                                                        HAVING      (CIMBTaskType IS NOT NULL)
+        //
+        //                                                                                        INSERT into #t2
+        //                                                                                        select #t1.ProjectUID, #t1.ProjectName, #t1.ProjectStartDate, #t1.ProjectFinishDate, #t1.[Type]
+        //                                                                                        FROM #t1 INNER JOIN (SELECT DISTINCT #t2.ProjectUID from #t2) AS t2temp ON t2temp.ProjectUID =#t1.ProjectUID
+        //
+        //                                                                                        SELECT     *
+        //                                                                                        FROM         [#t2]
+        //                                                                                        where ProjectUID in " +
+        //                                    ProjectsList +
+        //                                    @"
+        //                                                                                        ORDER BY ProjectUID,[Type], Start
+        //
+        //                                                                                        drop table #t1
+        //                                                                                        drop table #t2";
+
+        //                                var Conn = new SqlConnection(GetDataBaseConnectionString(SiteUrl));
+        //                                Conn.Open();
+
+        //                                var Result_set = new DataSet();
+        //                                var Adapter = new SqlDataAdapter(new SqlCommand(Qry, Conn));
+        //                                Adapter.Fill(Result_set);
+
+        //                                DataRow newrow;
+        //                                var grouptable = new Hashtable();
+        //                                var datarows = new List<datarow>();
+        //                                string groupname = string.Empty;
+        //                                foreach (DataRow row in Result_set.Tables[0].Rows)
+        //                                {
+        //                                    if (row["Type"].ToString() == "0")
+        //                                    {
+        //                                        var query = new SPQuery
+        //                                        {
+        //                                            Query =
+        //                                                @"<Where><Eq><FieldRef Name='ProjectUID' /><Value Type='Text'>" +
+        //                                                row[
+        //                                                    "ProjectUID"
+        //                                                    ] +
+        //                                                @"</Value></Eq></Where>"
+        //                                        };
+        //                                        SPListItemCollection collection = GroupList.GetItems(query);
+        //                                        if (collection.Count > 0)
+        //                                        {
+        //                                            SPListItem item = collection[0];
+        //                                            groupname = item[GroupFieldName].ToString();
+        //                                            var drow = new datarow();
+        //                                            drow.type = "Group";
+        //                                            drow.title = item[GroupFieldName].ToString();
+        //                                            drow.startdate = DateTime.MinValue;
+        //                                            drow.enddate = DateTime.MaxValue;
+        //                                            if (grouptable.ContainsKey(item[GroupFieldName].ToString()))
+        //                                            {
+        //                                                datarows =
+        //                                                    (List<datarow>)
+        //                                                    grouptable[
+        //                                                        item[GroupFieldName].
+        //                                                            ToString()];
+
+        //                                                drow = new datarow();
+        //                                                drow.type = "Project";
+        //                                                drow.startdate =
+        //                                                    Convert.ToDateTime(
+        //                                                        row["Start"]);
+        //                                                drow.enddate =
+        //                                                    Convert.ToDateTime(
+        //                                                        row["End"]);
+        //                                                drow.title =
+        //                                                    row["Title"].ToString();
+
+        //                                                datarows.Add(drow);
+        //                                                grouptable[
+        //                                                    item[GroupFieldName].
+        //                                                        ToString()] = datarows;
+        //                                            }
+        //                                            else
+        //                                            {
+        //                                                datarows = new List<datarow>();
+        //                                                datarows.Add(drow);
+
+        //                                                drow = new datarow();
+        //                                                drow.type = "Project";
+        //                                                drow.startdate =
+        //                                                    Convert.ToDateTime(
+        //                                                        row["Start"]);
+        //                                                drow.enddate =
+        //                                                    Convert.ToDateTime(
+        //                                                        row["End"]);
+        //                                                drow.title =
+        //                                                    row["Title"].ToString();
+
+        //                                                datarows.Add(drow);
+        //                                                grouptable.Add(
+        //                                                    item[GroupFieldName].
+        //                                                        ToString(), datarows);
+        //                                            }
+        //                                        }
+        //                                        else
+        //                                        {
+        //                                            groupname = "Not Configured.";
+        //                                            var drow = new datarow();
+        //                                            drow.type = "Group";
+        //                                            drow.title = groupname;
+        //                                            drow.startdate = DateTime.MinValue;
+        //                                            drow.enddate = DateTime.MaxValue;
+        //                                            if (grouptable.ContainsKey(groupname))
+        //                                            {
+        //                                                datarows = (List<datarow>)grouptable[groupname];
+        //                                                drow = new datarow();
+        //                                                drow.type = "Project";
+        //                                                drow.startdate = Convert.ToDateTime(row["Start"]);
+        //                                                drow.enddate = Convert.ToDateTime(row["End"]);
+        //                                                drow.title = row["Title"].ToString();
+        //                                                datarows.Add(drow);
+        //                                                grouptable[groupname] = datarows;
+        //                                            }
+        //                                            else
+        //                                            {
+        //                                                datarows = new List<datarow>();
+        //                                                datarows.Add(drow);
+        //                                                drow = new datarow();
+        //                                                drow.type = "Project";
+        //                                                drow.startdate = Convert.ToDateTime(row["Start"]);
+        //                                                drow.enddate = Convert.ToDateTime(row["End"]);
+        //                                                drow.title = row["Title"].ToString();
+        //                                                datarows.Add(drow);
+        //                                                grouptable.Add(groupname, datarows);
+        //                                            }
+        //                                        }
+        //                                    }
+        //                                    else if (groupname != string.Empty)
+        //                                    {
+        //                                        datarows =
+        //                                            (List<datarow>)
+        //                                            grouptable[groupname];
+        //                                        var drow = new datarow();
+        //                                        drow.title = row["Title"].ToString();
+        //                                        drow.startdate =
+        //                                            Convert.ToDateTime(row["Start"]);
+        //                                        drow.enddate =
+        //                                            Convert.ToDateTime(row["End"]);
+        //                                        drow.type = "CF";
+        //                                        datarows.Add(drow);
+        //                                        grouptable[groupname] = datarows;
+        //                                    }
+        //                                }
+
+        //                                // Adding the rows into datatable
+        //                                foreach (DictionaryEntry drws in grouptable)
+        //                                {
+        //                                    foreach (datarow drow in (List<datarow>)drws.Value)
+        //                                    {
+        //                                        DataRow row = ResultDataTable.NewRow();
+        //                                        row["Title"] = drow.title;
+        //                                        row["Start"] = drow.startdate;
+        //                                        row["Finish"] = drow.enddate;
+        //                                        row["Type"] = drow.type;
+        //                                        ResultDataTable.Rows.Add(row);
+        //                                    }
+        //                                }
+        //                            }
+        //                            else
+        //                            {
+        //                                ErrorLog("The Custom field called " + CustomFieldName + " is not found in the instanse " + Site.Url, EventLogEntryType.FailureAudit);
+        //                            }
+        //                        }
+        //                    }
+        //                }
+        //                    );
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                ErrorLog("Error at loading project list due to " + ex.Message, EventLogEntryType.Error);
+        //            }
+        //            return ResultDataTable;
+        //        }
+
+        #endregion "Version 3"
 
         #region "Version 2"
 
@@ -937,6 +1406,37 @@ namespace ITXProjectGovernanceReport._layouts.ITXProjectGovernanceReport
             public DateTime startdate;
             public DateTime enddate;
             public string type;
+        }
+
+        public static void ModifyConnectionString(string SiteURL)
+        {
+            // open access dynamic databse configuration
+            string connstr = Utilities.GetProjectServerSQLDatabaseConnectionString(SiteURL, Utilities.DatabaseType.PublishedDatabase);
+            var builder = new SqlConnectionStringBuilder(connstr);
+            ObjectScopeProvider1.AdjustForDynamicLoad(GovernanceReportGroupConfigDBname, builder.DataSource);
+        }
+
+        public static string Serialize(object value)
+        {
+            Type type = value.GetType();
+            var json = new JsonSerializer();
+            json.NullValueHandling = NullValueHandling.Ignore;
+            json.ObjectCreationHandling = ObjectCreationHandling.Replace;
+            json.MissingMemberHandling = MissingMemberHandling.Ignore;
+            json.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            if (type == typeof(DataTable))
+                json.Converters.Add(new DataTableConverter());
+            else if (type == typeof(DataSet))
+                json.Converters.Add(new DataSetConverter());
+            var sw = new StringWriter();
+            var writer = new JsonTextWriter(sw);
+            writer.Formatting = Formatting.Indented;
+            writer.QuoteChar = '"';
+            json.Serialize(writer, value);
+            string output = sw.ToString();
+            writer.Close();
+            sw.Close();
+            return output;
         }
     }
 }

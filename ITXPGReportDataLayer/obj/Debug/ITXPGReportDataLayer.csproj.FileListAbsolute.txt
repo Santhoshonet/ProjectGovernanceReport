@@ -1,0 +1,7 @@
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXPGReportDataLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXPGReportDataLayer\bin\Debug\ITXPGReportDataLayer.dll
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXPGReportDataLayer\bin\Debug\ITXPGReportDataLayer.pdb
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXPGReportDataLayer\bin\Debug\Telerik.OpenAccess.Query.dll
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXPGReportDataLayer\bin\Debug\Telerik.OpenAccess.Query.xml
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXPGReportDataLayer\obj\Debug\ITXPGReportDataLayer.dll
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXPGReportDataLayer\obj\Debug\ITXPGReportDataLayer.pdb

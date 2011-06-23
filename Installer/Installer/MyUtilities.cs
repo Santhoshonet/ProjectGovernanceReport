@@ -7,6 +7,9 @@ namespace Installer
 {
     class MyUtilities
     {
+        // Project Governance Report Database name here
+        public static string GovernanceReportGroupConfigDBname = "ITXBaseLineLogs"; //"ITXPGReportDataLayer";
+
         public static string LayoutsFolderPath { get { return SPUtility.GetGenericSetupPath(string.Empty) + "\\Template\\layouts"; } }
 
         public static string FeaturesFolderPath { get { return SPUtility.GetGenericSetupPath(string.Empty) + "\\Template\\Features"; } }
@@ -17,7 +20,7 @@ namespace Installer
             Application.DoEvents();
         }
 
-        public static DialogResult ShowDialog(string Message, Telerik.WinControls.RadMessageIcon Info)
+        public static DialogResult ShowDialog(string Message, RadMessageIcon Info)
         {
             RadMessageBox.SetThemeName("Office2007Black");
             if (Info == RadMessageIcon.Question)

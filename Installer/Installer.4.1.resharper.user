@@ -16,37 +16,39 @@
       <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Installer.cs" caret="7342" scrollPosition="0|0" />
       <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Program.cs" caret="346" scrollPosition="0|0" />
       <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyUtilities.cs" caret="305" scrollPosition="0|0" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="1890" scrollPosition="0|0" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="6652" scrollPosition="0|0" />
     </RecentFiles>
     <RecentEdits>
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Installer.cs" caret="6696" scrollPosition="0|103" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Installer.cs" caret="7005" scrollPosition="0|109" />
       <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Installer.cs" caret="664" scrollPosition="0|0" />
       <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Installer.cs" caret="664" scrollPosition="0|0" />
       <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Installer.cs" caret="1356" scrollPosition="0|0" />
       <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Installer.cs" caret="1814" scrollPosition="0|8" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="2408" scrollPosition="26|8" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="4766" scrollPosition="0|15" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|65" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|53" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|51" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|31" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|69" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|69" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|69" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|114" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|39" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="437" scrollPosition="0|9" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5199" scrollPosition="0|9" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="2291" scrollPosition="26|8" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="4623" scrollPosition="0|15" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5056" scrollPosition="0|65" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5056" scrollPosition="0|53" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5056" scrollPosition="0|51" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5056" scrollPosition="0|31" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5056" scrollPosition="0|69" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5056" scrollPosition="0|69" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5056" scrollPosition="0|69" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5056" scrollPosition="0|114" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5056" scrollPosition="0|39" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="311" scrollPosition="0|9" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5056" scrollPosition="0|9" />
       <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Program.cs" caret="346" scrollPosition="0|0" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="226" scrollPosition="0|0" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="560" scrollPosition="0|0" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="4740" scrollPosition="0|20" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="434" scrollPosition="0|0" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="4597" scrollPosition="0|20" />
       <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyUtilities.cs" caret="305" scrollPosition="0|0" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="1154" scrollPosition="10|12" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="1688" scrollPosition="0|25" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="1912" scrollPosition="0|25" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="2268" scrollPosition="0|25" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="1738" scrollPosition="0|25" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="2769" scrollPosition="0|57" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="3983" scrollPosition="0|57" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="1010" scrollPosition="0|18" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="1915" scrollPosition="0|21" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="1501" scrollPosition="0|21" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="5552" scrollPosition="0|81" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="179" scrollPosition="0|0" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="6243" scrollPosition="0|115" />
     </RecentEdits>
   </RecentFiles>
   <UnitTestRunner>
@@ -112,6 +114,7 @@
       <Item value="QuickLaunchPosition" priority="1" />
       <Item value="TopLinkMenuPosition" priority="0" />
       <Item value="ProcessWindowStyle" priority="0" />
+      <Item value="continue" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@Installer.MyConfiguration">
       <Item value="Application_Title" priority="9" />

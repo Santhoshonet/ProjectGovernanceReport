@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ITXPGReportDataLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ITXPGReportDataLayer\bin\Debug\ITXPGReportDataLayer.dll</HintPath>
+    </Reference>
     <Reference Include="ITXProjectsLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ebfca3a9b29c271a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ITXProjectsLibrary\ITXProjectsLibrary\bin\Debug\ITXProjectsLibrary.dll</HintPath>
@@ -68,6 +72,7 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Mobile" />
+    <Reference Include="Telerik.OpenAccess, Version=2009.1.405.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
@@ -75,6 +80,10 @@
     <Content Include="Web.config" />
     <Content Include="_layouts\ITXProjectGovernanceReport\collapse-hover.png" />
     <Content Include="_layouts\ITXProjectGovernanceReport\collapse.png" />
+    <Content Include="_layouts\ITXProjectGovernanceReport\Drag.png" />
+    <Content Include="_layouts\ITXProjectGovernanceReport\ITXPGReportV2.aspx" />
+    <Content Include="_layouts\ITXProjectGovernanceReport\jquery-1.6.1.min.js" />
+    <Content Include="_layouts\ITXProjectGovernanceReport\jquery-ui-1.8.13.custom.min.js" />
     <Content Include="_layouts\ITXProjectGovernanceReport\jquery.ganttView_ie7.css" />
     <Content Include="_layouts\ITXProjectGovernanceReport\jquery.ganttView_usercontrol.js" />
     <Content Include="_layouts\ITXProjectGovernanceReport\data.js" />
@@ -82,7 +91,6 @@
     <Content Include="_layouts\ITXProjectGovernanceReport\expand-hover.png" />
     <Content Include="_layouts\ITXProjectGovernanceReport\expand.png" />
     <Content Include="_layouts\ITXProjectGovernanceReport\ITXPGReport.aspx" />
-    <Content Include="_layouts\ITXProjectGovernanceReport\ITXProjectGovernanceReport.ascx" />
     <Content Include="_layouts\ITXProjectGovernanceReport\jquery-1.4.1.min.js" />
     <Content Include="_layouts\ITXProjectGovernanceReport\jquery-1.4.2.js" />
     <Content Include="_layouts\ITXProjectGovernanceReport\jquery-ganttview.png" />
@@ -90,7 +98,14 @@
     <Content Include="_layouts\ITXProjectGovernanceReport\jquery-ui-1.8.4.js" />
     <Content Include="_layouts\ITXProjectGovernanceReport\jquery.ganttView.css" />
     <Content Include="_layouts\ITXProjectGovernanceReport\jquery.ganttView.js" />
+    <Content Include="_layouts\ITXProjectGovernanceReport\jquery.json.js" />
+    <Content Include="_layouts\ITXProjectGovernanceReport\JQValidation.js" />
+    <Content Include="_layouts\ITXProjectGovernanceReport\json2.js" />
+    <Content Include="_layouts\ITXProjectGovernanceReport\ProjectGroupConfig.aspx" />
+    <Content Include="_layouts\ITXProjectGovernanceReport\ProjectGroupConfigure.ascx" />
     <Content Include="_layouts\ITXProjectGovernanceReport\reset.css" />
+    <Content Include="_layouts\ITXProjectGovernanceReport\style.css" />
+    <Content Include="_layouts\ITXProjectGovernanceReport\wait.gif" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
@@ -108,14 +123,31 @@
     <Compile Include="_layouts\ITXProjectGovernanceReport\ITXPGReport.aspx.designer.cs">
       <DependentUpon>ITXPGReport.aspx</DependentUpon>
     </Compile>
-    <Compile Include="_layouts\ITXProjectGovernanceReport\ITXProjectGovernanceReport.ascx.cs">
-      <DependentUpon>ITXProjectGovernanceReport.ascx</DependentUpon>
+    <Compile Include="_layouts\ITXProjectGovernanceReport\ITXPGReportV2.aspx.cs">
+      <DependentUpon>ITXPGReportV2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="_layouts\ITXProjectGovernanceReport\ITXProjectGovernanceReport.ascx.designer.cs">
-      <DependentUpon>ITXProjectGovernanceReport.ascx</DependentUpon>
+    <Compile Include="_layouts\ITXProjectGovernanceReport\ITXPGReportV2.aspx.designer.cs">
+      <DependentUpon>ITXPGReportV2.aspx</DependentUpon>
     </Compile>
     <Compile Include="_layouts\ITXProjectGovernanceReport\MyUtilities.cs" />
+    <Compile Include="_layouts\ITXProjectGovernanceReport\ProjectGroupConfig.aspx.cs">
+      <DependentUpon>ProjectGroupConfig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_layouts\ITXProjectGovernanceReport\ProjectGroupConfig.aspx.designer.cs">
+      <DependentUpon>ProjectGroupConfig.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="_layouts\ITXProjectGovernanceReport\ProjectGroupConfigure.ascx.cs">
+      <DependentUpon>ProjectGroupConfigure.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_layouts\ITXProjectGovernanceReport\ProjectGroupConfigure.ascx.designer.cs">
+      <DependentUpon>ProjectGroupConfigure.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -134,8 +166,8 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1143</DevelopmentServerPort>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>1144</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

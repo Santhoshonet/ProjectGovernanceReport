@@ -237,3 +237,34 @@ div.ganttview-grid-row-cell.ganttview-weekend
 {
 	background-color: #fafafa;
 }
+
+#GroupConfigurationContainer
+{
+	border: 1px solid #BBB;
+	padding: 5px;
+	width: 1020px;
+	padding-bottom: 10px;
+}
+
+#GroupConfigurationContainer img
+{
+	margin-right: 5px;
+}
+
+#GroupConfigurationContainer span
+{
+}
+
+#GroupConfigurationHolder
+{
+	padding: 10px;
+}
+
+#RefreshContainer
+{
+	border-left: 1px solid #BBB;
+	border-right: 1px solid #BBB;
+	padding: 5px;
+	width: 1020px;
+	text-align: right;
+}

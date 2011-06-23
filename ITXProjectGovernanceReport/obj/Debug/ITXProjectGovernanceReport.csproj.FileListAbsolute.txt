@@ -3,3 +3,5 @@ C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXPr
 C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXProjectGovernanceReport\obj\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXProjectGovernanceReport\obj\Debug\ITXProjectGovernanceReport.dll
 C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXProjectGovernanceReport\obj\Debug\ITXProjectGovernanceReport.pdb
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXProjectGovernanceReport\bin\ITXPGReportDataLayer.dll
+C:\Documents and Settings\Administrator\Desktop\ITXProjectGovernanceReport\ITXProjectGovernanceReport\bin\ITXPGReportDataLayer.pdb

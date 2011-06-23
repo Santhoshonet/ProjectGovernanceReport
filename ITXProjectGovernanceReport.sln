@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITXPGReportUtilities", "ITX
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Installer", "Installer\Installer\Installer.csproj", "{9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITXPGReportDataLayer", "ITXPGReportDataLayer\ITXPGReportDataLayer.csproj", "{AD06AAE4-7F0A-4698-9F5A-63897C27C4EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD06AAE4-7F0A-4698-9F5A-63897C27C4EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD06AAE4-7F0A-4698-9F5A-63897C27C4EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD06AAE4-7F0A-4698-9F5A-63897C27C4EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD06AAE4-7F0A-4698-9F5A-63897C27C4EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

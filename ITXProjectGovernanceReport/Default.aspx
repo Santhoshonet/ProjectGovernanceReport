@@ -9,7 +9,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <uc1:ProjectGroupConfigure ID="ProjectGroupConfigure1" runat="server" />
     </form>
 </body>
 </html>

@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ITXPGReport.aspx.cs" Inherits="ITXProjectGovernanceReport._layouts.ITXProjectGovernanceReport.ITXPGReport" %>
 
+<%@ Import Namespace="ITXProjectGovernanceReport._layouts.ITXProjectGovernanceReport" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -31,6 +32,15 @@
     <asp:Label ID="JSONData" runat="server" CssClass="jsondata"></asp:Label>
     <div id="ganttChart">
     </div>
+    <% if (MyUtilities.IndividualPages)
+       {%>
+    <div>
+        <label>
+            click
+            <asp:LinkButton ID="LnkConfigButton" runat="server">here</asp:LinkButton>
+            to manage your groups.</label></div>
+    <%
+        }%>
 
     <script type="text/javascript" src="jquery-1.4.2.js"></script>
 

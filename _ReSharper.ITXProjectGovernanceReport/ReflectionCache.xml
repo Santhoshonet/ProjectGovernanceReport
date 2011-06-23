@@ -15,5 +15,8 @@
   <Assembly Name="Telerik.WinControls.Themes.Office2007Black, Version=2009.1.9.414, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" Image="cd059a8c-8683-463d-a4ac-c5424ac6b845" Timestamp="633754008200000000" />
   <Assembly Name="Telerik.WinControls.UI, Version=2009.1.9.414, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" Image="fd7e4512-abbe-488c-b890-58585c9dc969" Timestamp="633754008060000000" XmlDocIndexTimestamp="633754008060000000" />
   <Assembly Name="Telerik.WinControls.UI.Design, Version=2009.1.9.414, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" Image="e4222edb-f559-4860-a614-2010dbbaab0f" Timestamp="633754008260000000" XmlDocIndexTimestamp="633754008260000000" />
-  <Assembly Name="ITXProjectsLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ebfca3a9b29c271a" Image="a0fa64ab-2220-4482-b79e-3534bbad6a48" Timestamp="634383582526929101" />
+  <Assembly Name="Telerik.OpenAccess, Version=2009.1.405.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342" Image="00c5228d-c468-46ea-b09c-044909df9e57" Timestamp="633745481280000000" XmlDocIndexTimestamp="633745481420000000" />
+  <Assembly Name="Telerik.OpenAccess.Query, Version=2009.1.405.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342" Image="a7a9d435-b161-44ee-8df2-1884b9bd7f54" Timestamp="633745481800000000" XmlDocIndexTimestamp="633745481800000000" />
+  <Assembly Name="ITXPGReportDataLayer, Version=1.0.0.0, Culture=neutral" Image="601499fe-8050-482a-8cef-af673e3e434e" Timestamp="634438291307248458" />
+  <Assembly Name="ITXProjectsLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ebfca3a9b29c271a" Image="606cefaf-02f7-4319-b4cb-3f7c40034876" Timestamp="634442600207413811" />
 </Assemblies>

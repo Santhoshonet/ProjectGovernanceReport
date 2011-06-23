@@ -14,50 +14,66 @@
   </NAntValidationSettings>
   <RecentFiles>
     <RecentFiles>
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery-1.6.1.min.js" caret="90043" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery-1.4.2.js" caret="70944" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery-1.4.1.min.js" caret="69612" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:date.js" caret="616" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/f:App.config" caret="958" scrollPosition="0|0" />
+      <File id="05C8C9D4-8D5D-4507-992A-414A2A17EBD7/f:FeatureEventReceiver.cs" caret="0" scrollPosition="0|0" />
+      <File id="AD06AAE4-7F0A-4698-9F5A-63897C27C4EF/f:App.config" caret="642" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:Default.aspx" caret="532" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/f:Default.aspx.cs" caret="1163" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:ITXPGReportV2.aspx.cs" caret="709" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ITXPGReport.aspx" caret="1669" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView_ie7.css" caret="4361" scrollPosition="0|0" />
       <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery-ui-1.8.4.css" caret="0" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/f:Default.aspx.cs" caret="0" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:date.js" caret="6988" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:data.js" caret="572" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:reset.css" caret="0" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:Feature.xml" caret="587" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:ITXProjectGovernanceReport.ascx.cs" caret="423" scrollPosition="0|0" />
-      <File id="9D6C8372-33A4-4E2A-B861-A1EE22285CB4/f:Program.cs" caret="1150" scrollPosition="0|0" />
-      <File id="05C8C9D4-8D5D-4507-992A-414A2A17EBD7/f:PGReportJobDefinition.cs" caret="0" scrollPosition="0|0" />
-      <File id="05C8C9D4-8D5D-4507-992A-414A2A17EBD7/f:ProjectWssWorkspaceCreatedEvent.cs" caret="0" scrollPosition="0|0" />
-      <File id="05C8C9D4-8D5D-4507-992A-414A2A17EBD7/f:FeatureEventReceiver.cs" caret="1559" scrollPosition="0|0" />
-      <File id="05C8C9D4-8D5D-4507-992A-414A2A17EBD7/f:MyUtilities.cs" caret="1976" scrollPosition="0|0" />
-      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="3443" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:ITXPGReport.aspx.cs" caret="871" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:Default.aspx" caret="0" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ITXProjectGovernanceReport.ascx" caret="712" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ITXPGReport.aspx" caret="0" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView_usercontrol.js" caret="5489" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView.js" caret="5431" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView_ie7.css" caret="0" scrollPosition="0|0" />
       <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView.css" caret="0" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery-ui-1.8.13.custom.min.js" caret="0" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView_usercontrol.js" caret="0" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:JQValidation.js" caret="0" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ITXPGReportV2.aspx" caret="0" scrollPosition="0|0" />
+      <File id="AD06AAE4-7F0A-4698-9F5A-63897C27C4EF/f:ObjectScopeProvider1.cs" caret="5918" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:ProjectGroupConfig.aspx.cs" caret="0" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:ProjectGroupConfigure.ascx.cs" caret="8464" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:ITXPGReport.aspx.cs" caret="10219" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ProjectGroupConfig.aspx" caret="713" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:style.css" caret="10361" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ProjectGroupConfigure.ascx" caret="2478" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:MyUtilities.cs" caret="0" scrollPosition="0|0" />
       <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyUtilities.cs" caret="0" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:MyUtilities.cs" caret="1012" scrollPosition="0|0" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyConfiguration.cs" caret="9029" scrollPosition="0|0" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:Installer.cs" caret="0" scrollPosition="0|0" />
     </RecentFiles>
     <RecentEdits>
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView_ie7.css" caret="3939" scrollPosition="0|95" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView_ie7.css" caret="3939" scrollPosition="0|95" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView_ie7.css" caret="3939" scrollPosition="0|178" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView_ie7.css" caret="3939" scrollPosition="0|39" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ITXProjectGovernanceReport.ascx" caret="220" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ITXProjectGovernanceReport.ascx" caret="1320" scrollPosition="0|21" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView_ie7.css" caret="3939" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ITXPGReport.aspx" caret="732" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ITXPGReport.aspx" caret="654" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView.js" caret="18782" scrollPosition="0|45" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView.js" caret="2256" scrollPosition="0|45" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView_ie7.css" caret="3939" scrollPosition="0|187" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView_usercontrol.js" caret="5489" scrollPosition="18|129" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView.js" caret="5597" scrollPosition="18|123" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView_ie7.css" caret="3938" scrollPosition="0|62" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView_ie7.css" caret="0" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView.css" caret="3449" scrollPosition="0|74" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:jquery.ganttView.css" caret="0" scrollPosition="0|0" />
-      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:MyUtilities.cs" caret="1012" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:MyUtilities.cs" caret="93905" scrollPosition="0|384" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:MyUtilities.cs" caret="26441" scrollPosition="0|144" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:MyUtilities.cs" caret="92412" scrollPosition="0|246" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:MyUtilities.cs" caret="30950" scrollPosition="0|213" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:MyUtilities.cs" caret="27641" scrollPosition="0|162" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:ProjectGroupConfigure.ascx.cs" caret="4786" scrollPosition="0|96" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:ProjectGroupConfigure.ascx.cs" caret="7167" scrollPosition="0|117" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:MyUtilities.cs" caret="21959" scrollPosition="0|73" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:MyUtilities.cs" caret="27529" scrollPosition="0|148" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:MyUtilities.cs" caret="30764" scrollPosition="0|181" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:MyUtilities.cs" caret="25695" scrollPosition="0|121" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:ProjectGroupConfigure.ascx.cs" caret="6804" scrollPosition="0|131" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:ITXPGReport.aspx.cs" caret="11123" scrollPosition="0|27" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:MyUtilities.cs" caret="2980" scrollPosition="0|46" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:MyUtilities.cs" caret="1712" scrollPosition="0|21" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:_layouts/d:ITXProjectGovernanceReport/f:MyUtilities.cs" caret="1264" scrollPosition="0|21" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ProjectGroupConfigure.ascx" caret="3501" scrollPosition="0|52" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ProjectGroupConfigure.ascx" caret="2719" scrollPosition="0|54" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ProjectGroupConfigure.ascx" caret="3497" scrollPosition="0|56" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ProjectGroupConfigure.ascx" caret="21954" scrollPosition="0|406" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ProjectGroupConfigure.ascx" caret="14213" scrollPosition="0|268" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ProjectGroupConfigure.ascx" caret="3146" scrollPosition="0|46" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ProjectGroupConfigure.ascx" caret="13200" scrollPosition="0|259" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ProjectGroupConfigure.ascx" caret="13935" scrollPosition="0|217" />
+      <File id="9CEBA478-8E69-4C58-B7C0-BAE092E2FCF6/f:MyUtilities.cs" caret="849" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ProjectGroupConfigure.ascx" caret="0" scrollPosition="0|30" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:style.css" caret="10361" scrollPosition="0|385" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:style.css" caret="0" scrollPosition="0|0" />
+      <File id="5629C4F0-F58F-4BED-95F6-123A31AD9325/d:__RESHARPER__DummyWebPages_/f:ProjectGroupConfigure.ascx" caret="2478" scrollPosition="0|18" />
     </RecentEdits>
   </RecentFiles>
   <UnitTestRunner>
@@ -72,39 +88,39 @@
     <ItemStatistics item="Default">
       <Item value="Office.Project.Server" priority="1" />
       <Item value="Library" priority="1" />
-      <Item value="catch" priority="3" />
-      <Item value="Exception" priority="3" />
-      <Item value="MyUtilities" priority="18" />
-      <Item value="ex" priority="3" />
-      <Item value="DataTable" priority="1" />
+      <Item value="catch" priority="4" />
+      <Item value="Exception" priority="5" />
+      <Item value="MyUtilities" priority="27" />
+      <Item value="ex" priority="6" />
+      <Item value="DataTable" priority="3" />
       <Item value="Nullable" priority="0" />
-      <Item value="null" priority="6" />
-      <Item value="string" priority="15" />
-      <Item value="using" priority="1" />
-      <Item value="var" priority="11" />
+      <Item value="null" priority="7" />
+      <Item value="string" priority="44" />
+      <Item value="using" priority="7" />
+      <Item value="var" priority="33" />
       <Item value="url" priority="0" />
-      <Item value="public" priority="7" />
-      <Item value="static" priority="3" />
-      <Item value="Guid" priority="9" />
+      <Item value="public" priority="25" />
+      <Item value="static" priority="7" />
+      <Item value="Guid" priority="28" />
       <Item value="CustomField" priority="3" />
       <Item value="GetCustomFieldGuid" priority="0" />
-      <Item value="SiteUrl" priority="4" />
+      <Item value="SiteUrl" priority="12" />
       <Item value="CredentialCache" priority="2" />
-      <Item value="if" priority="15" />
+      <Item value="if" priority="36" />
       <Item value="TCFRow" priority="6" />
-      <Item value="foreach" priority="9" />
+      <Item value="foreach" priority="13" />
       <Item value="ProjectDataSet" priority="4" />
       <Item value="taskRow" priority="5" />
-      <Item value="in" priority="6" />
+      <Item value="in" priority="7" />
       <Item value="ProjectDataDS" priority="4" />
       <Item value="assignmentRow" priority="1" />
       <Item value="assignmentCustomFieldsRow" priority="1" />
       <Item value="CF" priority="0" />
       <Item value="CustomFieldName" priority="6" />
       <Item value="CustomFieldDataSet" priority="0" />
-      <Item value="UseDefaultCredentials" priority="3" />
-      <Item value="true" priority="10" />
-      <Item value="AllowAutoRedirect" priority="4" />
+      <Item value="UseDefaultCredentials" priority="4" />
+      <Item value="true" priority="13" />
+      <Item value="AllowAutoRedirect" priority="5" />
       <Item value="Customfield_Svc" priority="0" />
       <Item value="Lookuptable_Svc" priority="0" />
       <Item value="LookupRow" priority="1" />
@@ -115,18 +131,18 @@
       <Item value="LookupTableDataSet" priority="1" />
       <Item value="CustomFieldGuid" priority="1" />
       <Item value="LookupTableDS" priority="1" />
-      <Item value="false" priority="10" />
+      <Item value="false" priority="19" />
       <Item value="newrow" priority="2" />
       <Item value="PRow" priority="4" />
       <Item value="result" priority="1" />
       <Item value="GridView1" priority="0" />
       <Item value="ResultDataTable" priority="1" />
       <Item value="hashtable" priority="0" />
-      <Item value="new" priority="8" />
+      <Item value="new" priority="18" />
       <Item value="Hashtable" priority="0" />
       <Item value="results" priority="4" />
       <Item value="TRow" priority="3" />
-      <Item value="DateTime" priority="11" />
+      <Item value="DateTime" priority="13" />
       <Item value="struct" priority="0" />
       <Item value="private" priority="0" />
       <Item value="taskdates" priority="4" />
@@ -149,30 +165,30 @@
       <Item value="JsonTextWriter" priority="0" />
       <Item value="JSONData" priority="0" />
       <Item value="Serialize" priority="0" />
-      <Item value="EventLogEntryType" priority="4" />
-      <Item value="int" priority="0" />
+      <Item value="EventLogEntryType" priority="6" />
+      <Item value="int" priority="1" />
       <Item value="k" priority="1" />
       <Item value="List&lt;ProjectDataSet&gt;" priority="0" />
       <Item value="ProjectDatasets" priority="0" />
       <Item value="dictionaryEntry" priority="0" />
       <Item value="results_master" priority="0" />
-      <Item value="SPSite" priority="1" />
-      <Item value="Site" priority="16" />
+      <Item value="SPSite" priority="2" />
+      <Item value="Site" priority="19" />
       <Item value="CategoryPermissionDS" priority="0" />
       <Item value="GroupList" priority="4" />
       <Item value="GroupListName" priority="5" />
       <Item value="SPQuery" priority="1" />
-      <Item value="Project_Svc" priority="4" />
+      <Item value="Project_Svc" priority="8" />
       <Item value="ProjectGuid" priority="4" />
       <Item value="Query" priority="0" />
       <Item value="GroupFieldName" priority="4" />
-      <Item value="groupname" priority="0" />
-      <Item value="SPListItemCollection" priority="1" />
+      <Item value="groupname" priority="10" />
+      <Item value="SPListItemCollection" priority="2" />
       <Item value="ProjectItemCollection" priority="2" />
       <Item value="contextInfo" priority="1" />
       <Item value="SPList" priority="4" />
       <Item value="configurationList" priority="8" />
-      <Item value="try" priority="5" />
+      <Item value="try" priority="9" />
       <Item value="ListUID" priority="3" />
       <Item value="SPListTemplateType" priority="0" />
       <Item value="listname" priority="1" />
@@ -192,7 +208,7 @@
       <Item value="text_field" priority="0" />
       <Item value="SPListItem" priority="0" />
       <Item value="defaultSiteUrl" priority="1" />
-      <Item value="Url" priority="1" />
+      <Item value="Url" priority="2" />
       <Item value="item" priority="2" />
       <Item value="DataStoreEnum" priority="0" />
       <Item value="SPWeeklySchedule" priority="0" />
@@ -201,47 +217,135 @@
       <Item value="DayOfWeek" priority="0" />
       <Item value="weeklySchedule" priority="0" />
       <Item value="WebApplication" priority="0" />
-      <Item value="return" priority="0" />
+      <Item value="return" priority="6" />
       <Item value="void" priority="0" />
-      <Item value="ErrorLog" priority="0" />
-      <Item value="Project" priority="2" />
-      <Item value="ProjectsList" priority="3" />
-      <Item value="projectID" priority="0" />
-      <Item value="else" priority="4" />
-      <Item value="row" priority="3" />
-      <Item value="DataRow" priority="1" />
+      <Item value="ErrorLog" priority="1" />
+      <Item value="Project" priority="4" />
+      <Item value="ProjectsList" priority="6" />
+      <Item value="projectID" priority="1" />
+      <Item value="else" priority="8" />
+      <Item value="row" priority="4" />
+      <Item value="DataRow" priority="2" />
       <Item value="query" priority="0" />
       <Item value="for" priority="0" />
       <Item value="collection" priority="0" />
       <Item value="Convert" priority="0" />
-      <Item value="List&lt;string&gt;" priority="0" />
-      <Item value="bool" priority="0" />
+      <Item value="List&lt;string&gt;" priority="1" />
+      <Item value="bool" priority="5" />
       <Item value="navigationnode" priority="0" />
       <Item value="CustomField_Svc" priority="0" />
+      <Item value="WebMethod" priority="0" />
+      <Item value="outputTable" priority="4" />
+      <Item value="testrow" priority="1" />
+      <Item value="System" priority="1" />
+      <Item value="Threading" priority="0" />
+      <Item value="Thread" priority="0" />
+      <Item value="Label" priority="0" />
+      <Item value="Response" priority="1" />
+      <Item value="resource_uid" priority="1" />
+      <Item value="value" priority="2" />
+      <Item value="group_uid" priority="1" />
+      <Item value="Groups" priority="8" />
+      <Item value="project_uid" priority="1" />
+      <Item value="ObjectScopeProvider1" priority="4" />
+      <Item value="SPContext" priority="1" />
+      <Item value="Resource" priority="2" />
+      <Item value="Resource_Svc" priority="4" />
+      <Item value="groupses" priority="5" />
+      <Item value="scope" priority="31" />
+      <Item value="Linq" priority="1" />
+      <Item value="where" priority="13" />
+      <Item value="c" priority="15" />
+      <Item value="currentuseruid" priority="4" />
+      <Item value="from" priority="7" />
+      <Item value="select" priority="7" />
+      <Item value="Users" priority="14" />
+      <Item value="userses" priority="10" />
+      <Item value="Output" priority="6" />
+      <Item value="List" priority="8" />
+      <Item value="group_name" priority="1" />
+      <Item value="gname" priority="1" />
+      <Item value="groups" priority="10" />
+      <Item value="new_group" priority="7" />
+      <Item value="LblCurUserUId" priority="2" />
+      <Item value="new_user" priority="1" />
+      <Item value="List&lt;Groups&gt;" priority="0" />
+      <Item value="Projects" priority="6" />
+      <Item value="projects" priority="5" />
+      <Item value="List&lt;Projects&gt;" priority="0" />
+      <Item value="ProjectTable" priority="0" />
+      <Item value="d" priority="1" />
+      <Item value="e" priority="0" />
+      <Item value="count" priority="1" />
+      <Item value="new_proj_row" priority="4" />
+      <Item value="group" priority="1" />
+      <Item value="groupuid" priority="2" />
+      <Item value="projectuid" priority="2" />
+      <Item value="projectname" priority="1" />
+      <Item value="old_groups" priority="3" />
+      <Item value="new_groups" priority="1" />
+      <Item value="out" priority="0" />
+      <Item value="project" priority="4" />
+      <Item value="Array" priority="3" />
+      <Item value="obj" priority="1" />
+      <Item value="top_array" priority="1" />
+      <Item value="array" priority="4" />
+      <Item value="index" priority="0" />
+      <Item value="ITXPGReportDataLayer" priority="4" />
+      <Item value="db" priority="0" />
+      <Item value="SPSecurity" priority="0" />
+      <Item value="connstr" priority="3" />
+      <Item value="SqlConnectionString" priority="0" />
+      <Item value="connectionString" priority="0" />
+      <Item value="ConnectionString" priority="0" />
+      <Item value="builder" priority="3" />
+      <Item value="SqlConnectionStringBuilder" priority="0" />
+      <Item value="ModifyConnectionString" priority="0" />
+      <Item value="connection" priority="2" />
+      <Item value="SqlConnection" priority="0" />
+      <Item value="SqlCommand" priority="0" />
+      <Item value="QRY" priority="0" />
+      <Item value="command" priority="0" />
+      <Item value="MessageBox" priority="0" />
+      <Item value="Project_Status_Fieldname" priority="5" />
+      <Item value="Project_Stream_Fieldname" priority="0" />
+      <Item value="streams" priority="5" />
+      <Item value="Length" priority="2" />
+      <Item value="stream" priority="2" />
+      <Item value="CurrentUserUID" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@ITXProjectGovernanceReport._layouts.ITXProjectGovernanceReport.MyUtilities">
       <Item value="ErrorLog" priority="0" />
       <Item value="DoTaskLockModification" priority="0" />
       <Item value="GetProjectNames" priority="1" />
+      <Item value="DevelopMode" priority="1" />
+      <Item value="ProjectServerInstanceURL" priority="1" />
+      <Item value="GovernanceReportGroupConfigDBname" priority="0" />
+      <Item value="GetDataBaseConnectionString" priority="0" />
+      <Item value="ModifyConnectionStringAndExecuteDefaultSchema" priority="0" />
+      <Item value="ModifyConnectionString" priority="4" />
+      <Item value="IndividualPages" priority="1" />
+      <Item value="GetProjects_DataTable" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Exception">
-      <Item value="Message" priority="3" />
+      <Item value="Message" priority="6" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Diagnostics.EventLogEntryType">
-      <Item value="Error" priority="4" />
+      <Item value="Error" priority="5" />
       <Item value="FailureAudit" priority="1" />
+      <Item value="SuccessAudit" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Data.DataTable">
-      <Item value="Columns" priority="0" />
-      <Item value="NewRow" priority="0" />
-      <Item value="Rows" priority="4" />
+      <Item value="Columns" priority="1" />
+      <Item value="NewRow" priority="1" />
+      <Item value="Rows" priority="7" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Data.DataColumnCollection">
-      <Item value="Add" priority="0" />
+      <Item value="Add" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Guid">
-      <Item value="NewGuid" priority="0" />
-      <Item value="Empty" priority="4" />
+      <Item value="NewGuid" priority="3" />
+      <Item value="Empty" priority="10" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Net.CredentialCache">
       <Item value="DefaultNetworkCredentials" priority="2" />
@@ -278,7 +382,7 @@
       <Item value="TASK_UID" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@Microsoft.SharePoint.SPContext">
-      <Item value="Current" priority="0" />
+      <Item value="Current" priority="3" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:ITXProjectsLibrary.WebSvcCustomFields.CustomFieldDataSet+CustomFieldsRow">
       <Item value="MD_PROP_UID_SECONDARY" priority="0" />
@@ -302,7 +406,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Data.DataRowCollection">
       <Item value="Count" priority="2" />
-      <Item value="Add" priority="0" />
+      <Item value="Add" priority="2" />
       <Item value="InsertAt" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:ITXProjectsLibrary.WebSvcLookupTable.LookupTableDataSet">
@@ -323,7 +427,8 @@
       <Item value="ColumnName" priority="9" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Guid">
-      <Item value="ToString" priority="2" />
+      <Item value="ToString" priority="20" />
+      <Item value="Equals" priority="3" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:ITXProjectsLibrary.WebSvcLookupTable.LookupTableDataSet+LookupTablesRow">
       <Item value="GetLookupTableTreesRows" priority="0" />
@@ -336,6 +441,8 @@
     <ItemStatistics item="Qualified:System.String">
       <Item value="ToLower" priority="1" />
       <Item value="Trim" priority="0" />
+      <Item value="Equals" priority="5" />
+      <Item value="Split" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:ITXProjectsLibrary.WebSvcProject.ProjectDataSet+ProjectRow">
       <Item value="PROJ_NAME" priority="1" />
@@ -364,6 +471,7 @@
       <Item value="MinValue" priority="5" />
       <Item value="MaxValue" priority="3" />
       <Item value="Compare" priority="0" />
+      <Item value="Today" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:ITXProjectGovernanceReport._layouts.ITXProjectGovernanceReport.MyUtilities+taskdates">
       <Item value="startdate" priority="5" />
@@ -399,12 +507,14 @@
       <Item value="Void" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
-      <Item value="Add" priority="0" />
+      <Item value="Add" priority="1" />
+      <Item value="Count" priority="10" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Microsoft.SharePoint.SPSite">
       <Item value="RootWeb" priority="11" />
       <Item value="WebApplication" priority="0" />
       <Item value="Url" priority="3" />
+      <Item value="ID" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Microsoft.SharePoint.SPWeb">
       <Item value="Lists" priority="5" />
@@ -414,6 +524,7 @@
       <Item value="Navigation" priority="2" />
       <Item value="Name" priority="0" />
       <Item value="ServerRelativeUrl" priority="0" />
+      <Item value="CurrentUser" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Microsoft.SharePoint.SPList">
       <Item value="GetItems" priority="3" />
@@ -432,6 +543,8 @@
       <Item value="GetProjectList" priority="0" />
       <Item value="GetProjectUIDList" priority="0" />
       <Item value="IsCustomFieldFound" priority="1" />
+      <Item value="GetProjectList_Table" priority="0" />
+      <Item value="GetProjectServerSQLDatabaseConnectionString" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Microsoft.SharePoint.SPListItem">
       <Item value="Title" priority="5" />
@@ -440,9 +553,11 @@
     <ItemStatistics item="Qualified:ITXProjectsLibrary.WebSvcProject.Project">
       <Item value="ReadProjectList" priority="0" />
       <Item value="GetProjectNameFromProjectUid" priority="0" />
+      <Item value="UseDefaultCredentials" priority="0" />
+      <Item value="Url" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Object">
-      <Item value="ToString" priority="4" />
+      <Item value="ToString" priority="8" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Microsoft.Office.Project.Server.Library.PSContextInfo">
       <Item value="TrackingGuid" priority="1" />
@@ -465,7 +580,7 @@
       <Item value="GenericList" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.String">
-      <Item value="Empty" priority="3" />
+      <Item value="Empty" priority="7" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Microsoft.SharePoint.SPFieldCollection">
       <Item value="Add" priority="2" />
@@ -529,6 +644,143 @@
     <ItemStatistics item="Qualified:Microsoft.SharePoint.Navigation.SPNavigationNodeCollection">
       <Item value="Add" priority="0" />
       <Item value="AddAsLast" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.DateTime">
+      <Item value="ToLongTimeString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Threading.Thread">
+      <Item value="Sleep" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.HttpResponse">
+      <Item value="Write" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@ITXProjectGovernanceReport.ObjectScopeProvider1">
+      <Item value="Database" priority="0" />
+      <Item value="GetNewObjectScope" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.UI.WebControls.Label">
+      <Item value="Text" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.SharePoint.SPContext">
+      <Item value="Web" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ITXProjectsLibrary.WebSvcResource.Resource">
+      <Item value="UseDefaultCredentials" priority="0" />
+      <Item value="Url" priority="0" />
+      <Item value="AllowAutoRedirect" priority="0" />
+      <Item value="GetCurrentUserUid" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Telerik.OpenAccess.Query`1">
+      <Item value="ExecuteEnumerable" priority="7" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="ToList" priority="6" />
+      <Item value="ToString" priority="0" />
+      <Item value="Count" priority="1" />
+      <Item value="GetEnumerator" priority="1" />
+      <Item value="AsEnumerable" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ITXPGReportDataLayer.Users">
+      <Item value="groups" priority="7" />
+      <Item value="resource_uid" priority="4" />
+      <Item value="ResourceUID" priority="7" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Telerik.OpenAccess.IObjectScope">
+      <Item value="GetOqlQuery" priority="6" />
+      <Item value="Transaction" priority="21" />
+      <Item value="Add" priority="9" />
+      <Item value="Refresh" priority="0" />
+      <Item value="Remove" priority="0" />
+      <Item value="Database" priority="0" />
+      <Item value="TransactionProperties" priority="0" />
+      <Item value="GetSqlQuery" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ITXPGReportDataLayer.Groups">
+      <Item value="group_name" priority="0" />
+      <Item value="Group_UID" priority="6" />
+      <Item value="Group_name" priority="3" />
+      <Item value="projects" priority="10" />
+      <Item value="UID" priority="4" />
+      <Item value="name" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Telerik.OpenAccess.ITransaction">
+      <Item value="Begin" priority="9" />
+      <Item value="Commit" priority="10" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IList`1">
+      <Item value="Add" priority="5" />
+      <Item value="Remove" priority="0" />
+      <Item value="Contains" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ITXPGReportDataLayer.Projects">
+      <Item value="Project_name" priority="1" />
+      <Item value="Project_UID" priority="1" />
+      <Item value="uid" priority="6" />
+      <Item value="name" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Array">
+      <Item value="Length" priority="2" />
+      <Item value="GetValue" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@ITXPGReportDataLayer.ObjectScopeProvider1">
+      <Item value="Database" priority="0" />
+      <Item value="ModifyConnection" priority="0" />
+      <Item value="AdjustForDynamicLoad" priority="0" />
+      <Item value="GetNewObjectScope" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Telerik.OpenAccess.Database">
+      <Item value="Properties" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Telerik.OpenAccess.Database">
+      <Item value="Get" priority="2" />
+      <Item value="OID" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Configuration.ConfigurationManager">
+      <Item value="AppSettings" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ITXPGReportDataLayer.ObjectScopeProvider1">
+      <Item value="ModifyConnection" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.SharePoint.SPSecurity">
+      <Item value="RunWithElevatedPrivileges" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@ITXProjectsLibrary.Utilities+DatabaseType">
+      <Item value="PublishedDatabase" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlConnectionStringBuilder">
+      <Item value="DataSource" priority="0" />
+      <Item value="InitialCatalog" priority="0" />
+      <Item value="ConnectionString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.HttpRequest">
+      <Item value="QueryString" priority="0" />
+      <Item value="UrlReferrer" priority="1" />
+      <Item value="Url" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Uri">
+      <Item value="Scheme" priority="1" />
+      <Item value="ToString" priority="0" />
+      <Item value="Host" priority="0" />
+      <Item value="Port" priority="0" />
+      <Item value="Segments" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Web.HttpContext">
+      <Item value="Current" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Installer.MyUtilities">
+      <Item value="GovernanceReportGroupConfigDBname" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlCommand">
+      <Item value="ExecuteNonQuery" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.MessageBox">
+      <Item value="Show" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlConnection">
+      <Item value="Open" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.UI.WebControls.LinkButton">
+      <Item value="Visible" priority="1" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

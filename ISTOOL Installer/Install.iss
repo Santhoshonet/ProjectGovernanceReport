@@ -16,29 +16,43 @@ Source: GAC\Telerik.WinControls.Themes.Office2007Black.dll; DestDir: {app}; Stro
 Source: GAC\Telerik.WinControls.UI.Design.dll; DestDir: {app}; StrongAssemblyName: ITX Library; Flags: noregerror gacinstall uninsneveruninstall overwritereadonly ignoreversion
 Source: GAC\Telerik.WinControls.UI.dll; DestDir: {app}; StrongAssemblyName: ITX Library; Flags: noregerror gacinstall uninsneveruninstall overwritereadonly ignoreversion
 Source: GAC\TelerikCommon.dll; DestDir: {app}; StrongAssemblyName: ITX Library; Flags: noregerror gacinstall uninsneveruninstall overwritereadonly ignoreversion
-Source: Package files\ITXIcon.ico; DestDir: {app}
+Source: Package files\ITXIcon.ico; DestDir: {app}; Flags: overwritereadonly
 Source: ..\ITXProjectGovernanceReport\bin\ITXProjectGovernanceReport.dll; DestDir: {app}\Bin; Flags: overwritereadonly ignoreversion
 Source: ..\ITXProjectGovernanceReport\Features\ITXProjectGovernanceReport\Feature.xml; DestDir: {app}\Features\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
 Source: GAC\Newtonsoft.Json.Net35.dll; DestDir: {app}; Flags: overwritereadonly ignoreversion
-Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\collapse-hover.png; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
+Source: GAC\ICSharpCode.SharpZipLib.dll; DestDir: {app}; StrongAssemblyName: ITXLibraries; Flags: uninsneveruninstall overwritereadonly noregerror ignoreversion gacinstall
+Source: GAC\Telerik.OpenAccess.Adonet2.dll; DestDir: {app}; StrongAssemblyName: ITXLibraries; Flags: uninsneveruninstall overwritereadonly noregerror ignoreversion gacinstall
+Source: GAC\Telerik.OpenAccess.Config.dll; DestDir: {app}; StrongAssemblyName: ITXLibraries; Flags: uninsneveruninstall overwritereadonly noregerror ignoreversion gacinstall
+Source: GAC\Telerik.OpenAccess.dll; DestDir: {app}; StrongAssemblyName: ITXLibraries; Flags: uninsneveruninstall overwritereadonly noregerror ignoreversion gacinstall
+Source: GAC\Telerik.OpenAccess.MySql.Data.dll; DestDir: {app}; StrongAssemblyName: ITXLibraries; Flags: uninsneveruninstall overwritereadonly noregerror ignoreversion gacinstall
+Source: GAC\Telerik.OpenAccess.Query.dll; DestDir: {app}; StrongAssemblyName: ITXLibraries; Flags: uninsneveruninstall overwritereadonly noregerror ignoreversion gacinstall
+Source: GAC\Telerik.OpenAccess.Runtime.dll; DestDir: {app}; StrongAssemblyName: ITXLibraries; Flags: uninsneveruninstall overwritereadonly noregerror ignoreversion gacinstall
+Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\ITXPGReport.aspx; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
+Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\ProjectGroupConfig.aspx; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
+Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\ProjectGroupConfigure.ascx; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
+Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\jquery.ganttView.css; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
+Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\jquery.ganttView_ie7.css; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
+Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\jquery-ui-1.8.4.css; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
+Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\reset.css; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
+Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\style.css; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
+Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\wait.gif; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
 Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\data.js; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
 Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\date.js; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
-Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\expand.png; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
-Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\expand-hover.png; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
-Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\ITXPGReport.aspx; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
-Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\ITXProjectGovernanceReport.ascx; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
 Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\jquery-1.4.1.min.js; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
 Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\jquery-1.4.2.js; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
-Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\jquery.ganttView.css; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
+Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\jquery-1.6.1.min.js; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
 Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\jquery.ganttView.js; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
 Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\jquery.ganttView_usercontrol.js; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
-Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\jquery-ganttview.png; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
-Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\jquery-ui-1.8.4.css; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
 Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\jquery-ui-1.8.4.js; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
-Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\reset.css; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
+Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\jquery-ui-1.8.13.custom.min.js; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
+Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\JQValidation.js; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
 Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\collapse.png; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
-Source: ..\ITXPGReportUtilities\bin\Debug\ITXPGReportUtilities.dll; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
-Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\jquery.ganttView_ie7.css; DestDir: {app}\Layouts\ITXProjectGovernanceReport
+Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\collapse-hover.png; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
+Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\Drag.png; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
+Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\expand.png; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
+Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\expand-hover.png; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
+Source: ..\ITXProjectGovernanceReport\_layouts\ITXProjectGovernanceReport\jquery-ganttview.png; DestDir: {app}\Layouts\ITXProjectGovernanceReport; Flags: overwritereadonly ignoreversion
+Source: ..\ITXPGReportDataLayer\bin\Debug\ITXPGReportDataLayer.dll; DestDir: {app}\Bin
 
 
 
